@@ -2,9 +2,9 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  // app.get("/", function(req, res) {
-  //   res.sendFile(__dirname + "../views/index.html");
-  // });
+  app.get("/", function(req, res) {
+    res.sendFile(__dirname + "../public/index.html");
+  });
 
   // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
