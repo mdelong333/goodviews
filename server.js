@@ -12,18 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Handlebars
-// app.engine(
-//   "handlebars",
-//   exphbs({
-//     defaultLayout: "main"
-//   })
-// );
-// app.set("view engine", "handlebars");
-
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/views/layouts/index.html");
-});
+// app.get("/", function(req, res) {
+//   res.sendFile(__dirname + "/views/index.html");
+// });
 
 // Routes
 require("./routes/apiRoutes")(app);
