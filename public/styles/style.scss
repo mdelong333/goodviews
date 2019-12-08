@@ -17,13 +17,20 @@ body {
   // display: flex;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 .home-page {
   overflow-y: hidden;
 }
 
-.page-container {
-  position: relative;
-  min-height: 100vh;
+.title {
+  margin-left: 15px;
+  @media screen and (max-width: 640px) {
+    margin-left: 0px;
+  }
 }
 
 .movie-genre-titles {

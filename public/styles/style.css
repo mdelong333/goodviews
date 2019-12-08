@@ -17,13 +17,23 @@ body {
   transform-style: preserve-3d;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 .home-page {
   overflow-y: hidden;
 }
 
-.page-container {
-  position: relative;
-  min-height: 100vh;
+.title {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    margin-left: 0px;
+  }
 }
 
 .movie-genre-titles {
