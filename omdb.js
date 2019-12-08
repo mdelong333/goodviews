@@ -1,8 +1,8 @@
 //Dependencies
-// require("dotenv").config();
+require("dotenv").config();
 // const fs = require("fs");
 // var axios = require("axios");
-// var keys = require("./keys.js");
+var keys = require("./keys.js");
 
 // Initial array of movies
 var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
@@ -10,7 +10,7 @@ var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 function displayMovieInfo() {
   var movie = $(this).attr("data-name");
-  var OMDB_KEY = env.OMDB_KEY;
+  var OMDB_KEY = keys.omdb;
   var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=" + OMDB_KEY;
   console.log(process.env.OMDB_KEY);
 
