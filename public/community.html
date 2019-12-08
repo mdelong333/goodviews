@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <!--Import Google Icon Font-->
     <link
-      href="http://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
       rel="stylesheet"
     />
     <!--Import materialize.css-->
@@ -32,52 +32,30 @@
             </p></a
           >
           <a href="#" data-activates="mobile-demo" class="button-collapse"
-            ><i class="material-icons">menu</i></a
+            ><i class="material-icons">☰</i></a
           >
           <ul class="right hide-on-med-and-down">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/mytitles.html">My Titles</a></li>
-            <li><a href="/browse.html">Browse</a></li>
-            <li><a href="/community.html">Community</a></li>
+            <li><a href="../public/index.html">Home</a></li>
+            <li><a href="../public/mytitles.html">My Titles</a></li>
+            <li><a href="../public/browse.html">Browse</a></li>
+            <li><a href="../public/community.html">Community</a></li>
           </ul>
-          <ul class="side-nav white-text" id="mobile-demo">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/mytitles.html">My Titles</a></li>
-            <li><a href="/browse.html">Browse</a></li>
-            <li><a href="/community.html">Community</a></li>
+          <ul class="side-nav black" id="mobile-demo">
+            <li><a class="white-text" href="../public/index.html">Home</a></li>
+            <li>
+              <a class="white-text" href="../public/mytitles.html">My Titles</a>
+            </li>
+            <li>
+              <a class="white-text" href="../public/browse.html">Browse</a>
+            </li>
+            <li>
+              <a class="white-text" href="../public/community.html"
+                >Community</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
-
-      <div class="container">
-        <!-- CAROUSEL -->
-        <div class="carousel">
-          <a href="#one!" class="carousel-item">
-            <img src="./images/7tdr64aic6821.jpg" alt="">
-          </a>
-          <a href="#two!" class="carousel-item">
-            <img src="./images/82738131.jpeg" alt="">
-          </a>
-          <a href="#three!" class="carousel-item">
-            <img src="./images/jaws.jpg" alt="">
-          </a>
-          <a href="#four!" class="carousel-item">
-            <img src="./images/OceansEightPoster.jpeg" alt="">
-          </a>
-          <a href="#five!" class="carousel-item">
-            <img src="./images/static.jpg" alt="">
-          </a>
-          <a href="#five!" class="carousel-item">
-            <img src="./images/Tag_2018_film.png" alt="">
-          </a>
-          <a href="#five!" class="carousel-item">
-            <img src="./images/Thor-The-Dark-World.jpg" alt="">
-          </a>
-          <a href="#five!" class="carousel-item">
-            <img src="./images/Untitled7.png" alt="">
-          </a>
-        </div>
-
     </div>
     <!--Import jQuery before materialize.js-->
     <script
@@ -85,26 +63,31 @@
       src="https://code.jquery.com/jquery-2.1.1.min.js"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          // Init Carousel
-          $('.carousel').carousel();
+    <script>
+      $(document).ready(function() {
+        // Init Carousel
+        $(".carousel").carousel();
+        // setInterval(function() {
+        // $('.carousel').carousel('next');
+        // }, 2000); // every 2 seconds
 
-          // Init Carousel Slider
-          $('.carousel.carousel-slider').carousel({fullWidth:true});
+        // Init Slider
+        $(".slider").slider();
 
-          // Fire off toast
-          //Materialize.toast('Hello World', 3000);
-
-          // Init Slider
-          $('.slider').slider();
-
-          // Init Modal
-          $('.modal').modal();
-
-          // Init Sidenav
-          $('.button-collapse').sideNav();
+        // Init Modal
+        $(".modal").modal({
+          dismissible: true,
+          opacity: 0.5,
+          inDuration: 1000,
+          outDuration: 200,
+          startingTop: "4%",
+          endingTop: "10%"
         });
-      </script>
+
+        // Init Sidenav
+        $(".button-collapse").sideNav();
+      });
+    </script>
+    <script src="./js/3d-effect.js"></script>
   </body>
 </html>
