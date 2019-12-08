@@ -17,6 +17,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^1.6.5",
     "nodemon": "^2.0.1",
+    "omdb": "^0.8.0",
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
