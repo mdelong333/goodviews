@@ -17,6 +17,10 @@ body {
   // display: flex;
 }
 
+.home-page {
+  overflow-y: hidden;
+}
+
 .page-container {
   position: relative;
   min-height: 100vh;
@@ -37,6 +41,7 @@ body {
 .modal {
   background-color: rgba(151, 21, 21, 0);
   overflow-y: hidden;
+  box-shadow: none;
 }
 
 .card {
@@ -48,7 +53,7 @@ body {
   padding: 30px;
   background-image: url(../images/Thor-The-Dark-World.jpg);
   background-size: 100% 100%;
-  width: 200px;
+  width: 235px;
   height: 380px;
   margin: auto;
   -webkit-transform-style: preserve-3d;
