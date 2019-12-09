@@ -46,6 +46,27 @@
         </div>
       </nav>
 
+      <!-- omdb api movie search test -->
+      <body>
+          <div class="container movie-search">
+            <h1 id="movie-search-title">Movie Search</h1>
+            <div id="buttons-view"></div>
+      
+            <form id="movie-form">
+              <label for="movie-input"></label>
+              <input type="text" id="movie-input" />
+              <br />
+      
+              <!-- Button triggers new movie to be added -->
+              <input id="add-movie" type="submit" value="Add Movie" />
+            </form>
+      
+            <!-- Movies will Get Dumped Here -->
+            <div id="movies-view"></div>
+          </div>
+        </body>
+
+      <!-- Home screen Content -->
       <div class="container carousel-cont">
         <h4 class="movie-genre-titles">SEE THE MOVIES YOU WANT TO SEE</h4>
         <!-- CAROUSEL -->
@@ -107,8 +128,12 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-2.1.1.min.js"
     ></script>
+    <!-- omdb api -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/omdb.js"></script>
+    <!-- materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-      <script>
+    <script>
         $(document).ready(function(){
           // Init Carousel
           $('.carousel').carousel();
@@ -132,7 +157,8 @@
           // Init Sidenav
           $('.button-collapse').sideNav();
         });
-      </script>
-          <script src="./js/3d-effect.js"></script>
+    </script>
+   <!-- 3D Effect -->
+    <script src="./js/3d-effect.js"></script>
   </body>
 </html>
