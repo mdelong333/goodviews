@@ -1,9 +1,22 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     res.sendFile(__dirname + "../public/index.html");
+  });
+
+  app.get("/browse.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/browse.html"));
+  });
+
+  app.get("/community.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/community.html"));
+  });
+
+  app.get("/mytitles.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/mytitles.html"));
   });
 
   // Load example page and pass in an example by id
@@ -15,15 +28,6 @@ module.exports = function(app) {
   //       example: dbExample
   //     });
   //   });
-  // });
-
-  //style server load
-  // app.get("/css/reset.css", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../views/layouts/styles/reset.css"));
-  // });
-
-  // app.get("/css/style.css", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../views/layouts/styles/style.css"));
   // });
 
   // Render 404 page for any unmatched routes
