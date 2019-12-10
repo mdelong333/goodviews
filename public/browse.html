@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
-  <body class="home-page">
-    <div class="page-container" >
+  <body>
+    <div class="page-container">
       <nav>
         <div class="nav-wrapper black">
           <a href="#!" class="brand-logo"
-            ><p class="title">
+            ><p>
               <span style="font-weight:100;">good</span>
               <span style="font-weight: bold; margin-left: -5px;">views</span>
             </p></a
@@ -46,29 +46,8 @@
         </div>
       </nav>
 
-      <!-- omdb api movie search test -->
-      <body>
-          <div class="container movie-search">
-            <h1 id="movie-search-title">Movie Search</h1>
-            <div id="buttons-view"></div>
-      
-            <form id="movie-form">
-              <label for="movie-input"></label>
-              <input type="text" id="movie-input" />
-              <br />
-      
-              <!-- Button triggers new movie to be added -->
-              <input id="add-movie" type="submit" value="Add Movie" />
-            </form>
-      
-            <!-- Movies will Get Dumped Here -->
-            <div id="movies-view"></div>
-          </div>
-        </body>
-
-      <!-- Home screen Content -->
       <div class="container carousel-cont">
-        <h4 class="movie-genre-titles">SEE THE MOVIES YOU WANT TO SEE</h4>
+        <h4 class="movie-genre-titles">New Release</h4>
         <!-- CAROUSEL -->
         <div class="carousel">
           <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
@@ -97,7 +76,65 @@
           </a>
         </div>
 
+        <div class="container carousel-cont">
+            <h4 class="movie-genre-titles">In Theatres</h4>
+            <!-- CAROUSEL -->
+            <div class="carousel">
+              <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/7tdr64aic6821.jpg" alt="">
+              </a>
+              <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/82738131.jpeg" alt="">
+              </a>
+              <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/jaws.jpg" alt="">
+              </a>
+              <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/OceansEightPoster.jpeg" alt="">
+              </a>
+              <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/static.jpg" alt="">
+              </a>
+              <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/Tag_2018_film.png" alt="">
+              </a>
+              <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/Thor-The-Dark-World.jpg" alt="">
+              </a>
+              <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                <img src="./images/Untitled7.png" alt="">
+              </a>
+            </div>
 
+            <div class="container carousel-cont">
+                <h4 class="movie-genre-titles">Drama</h4>
+                <!-- CAROUSEL -->
+                <div class="carousel">
+                  <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/7tdr64aic6821.jpg" alt="">
+                  </a>
+                  <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/82738131.jpeg" alt="">
+                  </a>
+                  <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/jaws.jpg" alt="">
+                  </a>
+                  <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/OceansEightPoster.jpeg" alt="">
+                  </a>
+                  <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/static.jpg" alt="">
+                  </a>
+                  <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/Tag_2018_film.png" alt="">
+                  </a>
+                  <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/Thor-The-Dark-World.jpg" alt="">
+                  </a>
+                  <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+                    <img src="./images/Untitled7.png" alt="">
+                  </a>
+                </div>
 
           <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -128,37 +165,35 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-2.1.1.min.js"
     ></script>
-    <!-- omdb api -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/omdb.js"></script>
-    <!-- materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script>
+      <script>
         $(document).ready(function(){
           // Init Carousel
           $('.carousel').carousel();
-            setInterval(function() {
-            $('.carousel').carousel('next');
-            }, 2000); // every 2 seconds
+            // setInterval(function() {
+            // $('.carousel').carousel('next');
+            // }, 2000); // every 2 seconds
 
           // Init Slider
           $('.slider').slider();
 
-          // Init Modal
+          // Modal
           $('.modal').modal({
             dismissible: true,
-            opacity: .0,
+            opacity: .5,
             inDuration: 1000, 
             outDuration: 200, 
             startingTop: '4%', 
-            endingTop: '20%', 
+            endingTop: '10%', 
           }); 
+
 
           // Init Sidenav
           $('.button-collapse').sideNav();
         });
-    </script>
-   <!-- 3D Effect -->
-    <script src="./js/3d-effect.js"></script>
+      </script>
+          <script src="./js/3d-effect.js"></script>
   </body>
 </html>
