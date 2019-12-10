@@ -4,7 +4,6 @@ html {
           box-sizing: border-box;
   overflow-x: hidden;
 }
-
 body {
   background-image: url(../images/black-curtain-background.jpg);
   background-attachment: fixed;
@@ -15,6 +14,10 @@ body {
   perspective: 1000px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  opacity: 0;
+  transition: opacity 2.5s ease-in;
+  -webkit-transition: opacity 2.5s ease-in; /* Safari */
+  -moz-transition: opacity 2.5s ease-in; /*firefox */
 }
 
 .page-container {
@@ -101,6 +104,8 @@ body {
 .card h1 {
   -webkit-transform: translateZ(100px);
   transform: translateZ(100px);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow:2px 2px 0 black,3px 3px 0 black;
 }
 
 .card p {
@@ -113,6 +118,7 @@ body {
   -webkit-transform: translateZ(80px);
   transform: translateZ(80px);
   font-style: italic;
+  text-shadow: 1px 1px 0 black, 2px 2px 0 black;
 }
 
 .card a {
@@ -122,15 +128,24 @@ body {
 
 .movie-search {
   margin-top: 50px;
-  background-color: rgba(255, 255, 255, 0.11);
+  /* background-color: rgba(255, 255, 255, 0.11); */
   text-align: center;
+  text-shadow: 2px 2px 0 black,3px 3px 0 slategray;
 }
 
 #movie-search-title {
   color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
 }
 
 #movie-input {
   background-color: rgba(255, 255, 255, 0.575);
+  opacity:.25;
+}
+.movie-genre-titles{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  text-shadow: 1px 1px 0 black, 2px 2px 0 slategray;
 }
 /*# sourceMappingURL=style.css.map */
