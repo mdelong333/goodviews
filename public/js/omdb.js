@@ -1,7 +1,3 @@
-//Dependencies
-// require("dotenv").config();
-// var keys = require("../../keys");
-
 // Initial array of movies
 var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
@@ -9,10 +5,9 @@ var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 function displayMovieInfo() {
   var movie = $(this).attr("data-name");
   // var OMDB_KEY = keys.omdb;
-  // var OMDB_KEY = "trilogy";
-  var OMDB_KEY = env.OMDB_KEY;
+  var OMDB_KEY = "trilogy";
+  // var OMDB_KEY = env.OMDB_KEY;
   var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=" + OMDB_KEY;
-  console.log(process.env.OMDB_KEY);
 
   // Creating an AJAX call for the specific movie button being clicked
   $.ajax({
@@ -75,7 +70,9 @@ function renderButtons() {
     // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
     // Adding a class of movie-btn to our button
-    a.addClass("movie-btn");
+    a.addClass(
+      "movie-btn waves-effect waves-light btn grey darken-3 white-text add-movie-buttons"
+    );
     // Adding a data-attribute
     a.attr("data-name", movies[i]);
     // Providing the initial button text
