@@ -4,8 +4,8 @@ var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 function displayMovieInfo() {
   var movie = $(this).attr("data-name");
-  // var OMDB_KEY = keys.omdb;
-  var OMDB_KEY = "trilogy";
+  var OMDB_KEY = keys.omdb;
+  // var OMDB_KEY = "trilogy";
   // var OMDB_KEY = env.OMDB_KEY;
   var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=" + OMDB_KEY;
 
@@ -55,6 +55,36 @@ function displayMovieInfo() {
 
     // Putting the entire movie above the previous movies
     $("#movies-view").prepend(movieDiv);
+
+    // $(".carousel-cont").append(
+    //   `<div class="carousel">
+    //   <h1 class="white-text">Test Carousel</h1>
+    //     <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/7tdr64aic6821.jpg" alt="">
+    //     </a>
+    //     <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/82738131.jpeg" alt="">
+    //     </a>
+    //     <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/jaws.jpg" alt="">
+    //     </a>
+    //     <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/OceansEightPoster.jpeg" alt="">
+    //     </a>
+    //     <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/static.jpg" alt="">
+    //     </a>
+    //     <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/Tag_2018_film.png" alt="">
+    //     </a>
+    //     <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/Thor-The-Dark-World.jpg" alt="">
+    //     </a>
+    //     <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    //       <img src="./images/Untitled7.png" alt="">
+    //     </a>
+    //   </div>`
+    // );
   });
 }
 

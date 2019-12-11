@@ -49,7 +49,7 @@
  
 
       <!-- Home screen Content -->
-      <div class="container carousel-cont">
+      <div class="container carousel-cont" >
         <h4 class="movie-genre-titles">SEE THE MOVIES YOU WANT TO SEE</h4>
         <!-- CAROUSEL -->
         <div class="carousel">
@@ -116,29 +116,32 @@
     <!-- materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script>
-        $(document).ready(function(){
-          // Init Carousel
-          $('.carousel').carousel();
-            setInterval(function() {
-            $('.carousel').carousel('next');
-            }, 2000); // every 2 seconds
-
-          // Init Slider
-          $('.slider').slider();
-
-          // Init Modal
-          $('.modal').modal({
-            dismissible: true,
-            opacity: .0,
-            inDuration: 1000, 
-            outDuration: 200, 
-            startingTop: '4%', 
-            endingTop: '20%', 
-          }); 
-
-          // Init Sidenav
-          $('.button-collapse').sideNav();
+      $(document).ready(function(){
+        // Init Carousel
+        $('.carousel').carousel({
+          duration: 200,
+          fullWidth: false
         });
+          setInterval(function() {
+          $('.carousel').carousel('next');
+          }, 2000); // every 2 seconds
+
+        // Init Slider
+        $('.slider').slider();
+
+        // Init Modal
+        $('.modal').modal({
+          dismissible: true,
+          opacity: .75,
+          inDuration: 1000, 
+          outDuration: 200, 
+          startingTop: '4%', 
+          endingTop: '20%', 
+        }); 
+
+        // Init Sidenav
+        $('.button-collapse').sideNav();
+      });
     </script>
    <!-- 3D Effect -->
     <script src="./js/3d-effect.js"></script>
