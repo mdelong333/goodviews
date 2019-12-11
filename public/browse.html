@@ -50,21 +50,21 @@
       <!-- omdb api movie search test -->
   
       <div class="container movie-search">
-          <h1 id="movie-search-title">Search Movies</h1>
-          
-          <form id="movie-form">
-            <label for="movie-input"></label>
-            <input type="text" id="movie-input" />
-            <br />
-            <!-- Button triggers new movie to be added -->
-            <input class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie" id="add-movie" type="submit" value="Search" data-target="modal1" data-target="modal2"/>
-          </form>
-          <div class="container searched"></div>
-          <!-- movie buttons -->
-          <div id="buttons-view"></div>
-          <!-- Movies will Get Dumped Here -->
-          <div id="movies-view"></div>
-        </div>
+        <h1 id="movie-search-title">Search Movies</h1>
+        
+        <form id="movie-form">
+          <label for="movie-input"></label>
+          <input type="text" id="movie-input" />
+          <br />
+          <!-- Button triggers new movie to be added -->
+          <input class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie" id="add-movie" type="submit" value="Search" data-target="modal1" data-target="modal2"/>
+        </form>
+        <div class="container searched"></div>
+        <!-- movie buttons -->
+        <div id="buttons-view"></div>
+        <!-- Movies will Get Dumped Here -->
+        <div id="movies-view"></div>
+      </div>
 
       <div class="container carousel-cont">
         <h4 class="movie-genre-titles">New Release</h4>
@@ -76,9 +76,40 @@
         </div>
       </div>
 
+      <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">In Theatres</h4>
+      
+          <div class="carousel">
+            <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/7tdr64aic6821.jpg" alt="">
+            </a>
+            <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/82738131.jpeg" alt="">
+            </a>
+            <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/jaws.jpg" alt="">
+            </a>
+            <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/OceansEightPoster.jpeg" alt="">
+            </a>
+            <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/static.jpg" alt="">
+            </a>
+            <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/Tag_2018_film.png" alt="">
+            </a>
+            <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/Thor-The-Dark-World.jpg" alt="">
+            </a>
+            <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+              <img src="./images/Untitled7.png" alt="">
+            </a>
+          </div>
+        </div>
+
         <div class="container carousel-cont">
-            <h4 class="movie-genre-titles">In Theatres</h4>
-        
+            <h4 class="movie-genre-titles">Drama</h4>
+            <!-- CAROUSEL -->
             <div class="carousel">
               <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="./images/7tdr64aic6821.jpg" alt="">
@@ -107,37 +138,26 @@
             </div>
           </div>
 
-            <div class="container carousel-cont">
-                <h4 class="movie-genre-titles">Drama</h4>
-                <!-- CAROUSEL -->
-                <div class="carousel">
-                  <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/7tdr64aic6821.jpg" alt="">
-                  </a>
-                  <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/82738131.jpeg" alt="">
-                  </a>
-                  <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/jaws.jpg" alt="">
-                  </a>
-                  <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/OceansEightPoster.jpeg" alt="">
-                  </a>
-                  <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/static.jpg" alt="">
-                  </a>
-                  <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/Tag_2018_film.png" alt="">
-                  </a>
-                  <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/Thor-The-Dark-World.jpg" alt="">
-                  </a>
-                  <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                    <img src="./images/Untitled7.png" alt="">
-                  </a>
-                </div>
+  <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
+  <!-- <div id="modal2" class="modal">
+      <div class="modal-content card"></div>
+      <div class= "white-text">
+          <h1 id="modal-title"></h1>
+          <p>
+            <small id="modal-year"></small>
+            <br>
+            <small id="modal-rating"></small>
+          </p>
+          <br>
+          <p class="related">
+            <strong id="modal-summary"></strong>
+          </p>
+      
+          <button id="favorite"  class="material-icons red-text small"></button>
+        </div>
+    </div> -->
 
-          <!-- Modal Structure -->
+    <!-- 3D Modal -->
     <div id="modal1" class="modal">        
       <div class="modal-content card">
         <div class="card-content">
@@ -153,8 +173,7 @@
             </p>
             <br>
             <!-- FIXME button cant be clicked -->
-            <button class="waves-effect waves-light btn grey darken-3 white-text test-btn">TEST BUTTON</button>
-            <p><i id="favorite" class="material-icons red-text small"></i></p>
+            <button id="favorite" class="material-icons red-text small"></button>
         </div>
       </div>
     </div>

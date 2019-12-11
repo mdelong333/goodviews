@@ -36,7 +36,8 @@ function displayMovieInfo(movie) {
       title: response.Title,
       summary: response.Plot,
       rating: response.Rated,
-      year: response.Year
+      year: response.Year,
+      favorite: false
     };
 
     // Display on Modal
@@ -56,21 +57,28 @@ function displayMovieInfo(movie) {
     $(favorite).html("favorite_border");
 
     // Clicking on "favorite" heart icon
+    // FIXME nested incorrectly
     $(favorite).click(function() {
       // When unfavorited heart is clicked then...
       // display full heart and add movie to database as well as my title page
       if ($(this).html("favorite_border")) {
-        $(this).html("favorite");
-        // TODO add movie to database
-        console.log(movieData.title + " added to favorites");
+        $(this).click(function() {
+          $(this).html("favorite");
+          movieData = true;
+          // TODO add movie to database
+          console.log(movieData.title + " added to favorites");
+        });
       }
 
       // If favorited is clicked then...
       // display empty heart and remove movie from database as well as my titles page
       if ($(this).html("favorite")) {
-        $(this).html("favorite_border");
-        // TODO remove movie to database
-        console.log(movieData.title + " removed to favorites");
+        $(this).click(function() {
+          $(this).html("favorite_border");
+          movieData = false;
+          // TODO remove movie to database
+          console.log(movieData.title + " removed to favorites");
+        });
       }
     });
   });
