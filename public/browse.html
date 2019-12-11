@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
@@ -138,9 +139,9 @@
                 </div>
 
           <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-      <div class="modal-content card">
-            <div class="card-content">
+    <div id="modal1" class="modal">        
+      <div class="modal-content card" style="background-image: url(./images/Thor-The-Dark-World.jpg);">
+        <div class="card-content">
               <h1>Thor</h1>
               <p>
                 <small>Directed By: Kenneth Branagh</small>
@@ -151,11 +152,15 @@
                   >American superhero film based on the Marvel Comic book hero</strong
                 >
               </p>
+              <br>
+              <p><i id="star" onclick="star()" class="material-icons yellow-text text-accent-2 medium">star_border</i></p> 
+              <!-- <p><i class="material-icons yellow-text text-accent-2 medium">star</i></p> -->
+              
           </div>
 
-      <div class="modal-footer">
-        <a href="#!" class="waves-effect waves-light btn grey darken-3 white-text favorite" type="submit" value="Favorite">Agree</a>
-      </div>
+         
+        <!-- <a href="#!" class="waves-effect waves-light btn grey darken-3 white-text favorite" type="submit" value="Favorite">Favorite</a> -->
+     
     </div>
 
     </div>
