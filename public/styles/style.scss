@@ -27,7 +27,7 @@ body {
 }
 
 .title {
-  margin-left: 15px;
+  margin-left: 20px;
   @media screen and (max-width: 640px) {
     margin-left: 0px;
   }
@@ -131,4 +131,9 @@ body {
 
 .add-movie-buttons {
   margin: 5px;
+}
+
+#favorite,
+.test-btn {
+  z-index: 100;
 }
