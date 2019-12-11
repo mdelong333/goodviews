@@ -51,7 +51,6 @@
             <div class="container movie-search">
                 <h1 id="movie-search-title">Search Movies</h1>
                 
-          
                 <form id="movie-form">
                   <label for="movie-input"></label>
                   <input type="text" id="movie-input" />
@@ -75,10 +74,11 @@
             <img src="./images/7tdr64aic6821.jpg" alt="">
           </a>
         </div>
+      </div>
 
         <div class="container carousel-cont">
-            <h4 class="movie-genre-titles">In Theatres</h4>
-            <!-- CAROUSEL -->
+            <!-- <h4 class="movie-genre-titles">In Theatres</h4>
+        
             <div class="carousel">
               <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="./images/7tdr64aic6821.jpg" alt="">
@@ -104,7 +104,8 @@
               <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="./images/Untitled7.png" alt="">
               </a>
-            </div>
+            </div> -->
+          </div>
 
             <div class="container carousel-cont">
                 <h4 class="movie-genre-titles">Drama</h4>
@@ -151,12 +152,10 @@
                 >
               </p>
           </div>
-        <!-- <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
+
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div> -->
+        <a href="#!" class="waves-effect waves-light btn grey darken-3 white-text favorite" type="submit" value="Favorite">Agree</a>
+      </div>
     </div>
 
     </div>
@@ -182,7 +181,7 @@
           // Modal
           $('.modal').modal({
             dismissible: true,
-            opacity: .5,
+            opacity: .75,
             inDuration: 1000, 
             outDuration: 200, 
             startingTop: '4%', 
