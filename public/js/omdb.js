@@ -39,6 +39,8 @@ function displayMovieInfo(movie) {
       year: response.Year
     };
 
+    // Display on Modal
+    // FIXME Will not display image
     $(".card").css({
       "background-image": `url(${movieData.poster})`
     });
@@ -47,18 +49,28 @@ function displayMovieInfo(movie) {
     $("#modal-rating").html(`Rated: ${movieData.rating}`);
     $("#modal-summary").html(`${movieData.summary}`);
 
-    // Add To Favorites
+    // Add To Favorites Button
     favorite = $("#favorite");
 
+    // Add Button to Modal
     $(favorite).html("favorite_border");
 
+    // Clicking on "favorite" heart icon
     $(favorite).click(function() {
+      // When unfavorited heart is clicked then...
+      // display full heart and add movie to database as well as my title page
+      if ($(this).html("favorite_border")) {
+        $(this).html("favorite");
+        // TODO add movie to database
+        console.log(movieData.title + " added to favorites");
+      }
+
+      // If favorited is clicked then...
+      // display empty heart and remove movie from database as well as my titles page
       if ($(this).html("favorite")) {
         $(this).html("favorite_border");
-      } else if ($(this).html("favorite_border")) {
-        $(this).html("favorite");
-      } else {
-        $(favorite).html("favorite_border");
+        // TODO remove movie to database
+        console.log(movieData.title + " removed to favorites");
       }
     });
   });
