@@ -1,5 +1,4 @@
-// Initial array of movies
-// var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+var favorite;
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
@@ -32,8 +31,6 @@ function displayMovieInfo(movie) {
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    console.log(response.Title);
-    console.log(response.Poster);
     movieData = {
       poster: response.Poster,
       title: response.Title,
@@ -42,39 +39,27 @@ function displayMovieInfo(movie) {
       year: response.Year
     };
 
-    // $(".searched").append(`<div class="search-display">
-    // <img src="${movieData.poster}" class="poster">
-    // <h3>${movieData.title}</h3>
-    // <h5>${movieData.summary}</h5>
-    // <h5>${movieData.rating}</h5>
-    // <h5>${movieData.year}</h5>
-    // </div>`);
-
-    // Search displays in modal
-    // $(".card").replaceWith(`
-    // <div class="modal-content card" style="background-image: url(${movieData.poster});">
-    //   <div class="card-content">
-    //     <h1 id="modal-title"></h1>
-    //     <p>
-    //       <small id="modal-year"></small>
-    //       <small id="modal-rating"></small>
-    //     </p>
-    //     <br>
-    //     <p class="related">
-    //       <strong id="modal-summary"></strong>
-    //     </p>
-    //     <br>
-    //     <p><i id="star" onclick="star()" class="material-icons yellow-text text-accent-2 medium">star_border</i></p>
-    //   </div>
-    // </div>`);
-
-    // $(".card").replaceWith(
-    //   `<div class="modal-content card" style="background-image: url(${movieData.poster});"</div>`
-    // );
-
-    $("#modal-title").html(`<h1 id="modal-title">${movieData.title}<h1>`);
+    $(".card").css({
+      "background-image": `url(${movieData.poster})`
+    });
+    $("#modal-title").html(`${movieData.title}`);
     $("#modal-year").html(`${movieData.year}`);
     $("#modal-rating").html(`Rated: ${movieData.rating}`);
     $("#modal-summary").html(`${movieData.summary}`);
+
+    // Add To Favorites
+    favorite = $("#favorite");
+
+    $(favorite).html("favorite_border");
+
+    $(favorite).click(function() {
+      if ($(this).html("favorite")) {
+        $(this).html("favorite_border");
+      } else if ($(this).html("favorite_border")) {
+        $(this).html("favorite");
+      } else {
+        $(favorite).html("favorite_border");
+      }
+    });
   });
 }

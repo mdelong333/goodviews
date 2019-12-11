@@ -1,6 +1,5 @@
 // why it doesn't work on firefox?
 var card = $(".card");
-var star = document.getElementById("star");
 
 $(document).on("mousemove", function(e) {
   var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
@@ -22,16 +21,3 @@ $(document).on("mousemove", function(e) {
       "deg)"
   );
 });
-
-function star() {
-  if (star.innerHTML === "star") {
-    star.innerHTML = "star_border";
-  }
-  if (star.innerHTML === "star_border") {
-    star.innerHTML = "star";
-  }
-}
-
-// $(star).click(function() {
-//   this.innerHTML = "star";
-// });
