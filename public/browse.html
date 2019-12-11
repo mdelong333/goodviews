@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
@@ -55,13 +56,10 @@
             <label for="movie-input"></label>
             <input type="text" id="movie-input" />
             <br />
-    
             <!-- Button triggers new movie to be added -->
-            <input class="waves-effect waves-light btn grey darken-3 white-text add-movie" id="add-movie" type="submit" value="Add Movie" />
+            <input class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie" id="add-movie" type="submit" value="Add Movie" data-target="modal1"/>
           </form>
-
           <div class="container searched"></div>
-
           <!-- movie buttons -->
           <div id="buttons-view"></div>
           <!-- Movies will Get Dumped Here -->
@@ -79,7 +77,7 @@
       </div>
 
         <div class="container carousel-cont">
-            <!-- <h4 class="movie-genre-titles">In Theatres</h4>
+            <h4 class="movie-genre-titles">In Theatres</h4>
         
             <div class="carousel">
               <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
@@ -106,7 +104,7 @@
               <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="./images/Untitled7.png" alt="">
               </a>
-            </div> -->
+            </div>
           </div>
 
             <div class="container carousel-cont">
@@ -140,27 +138,25 @@
                 </div>
 
           <!-- Modal Structure -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal">        
       <div class="modal-content card">
-            <div class="card-content">
-              <h1>Thor</h1>
-              <p>
-                <small>Directed By: Kenneth Branagh</small>
-              </p>
+        <div class="card-content">
+            <h1 id="modal-title"></h1>
+            <p>
+              <small id="modal-year"></small>
               <br>
-              <p class="related">
-                <strong
-                  >American superhero film based on the Marvel Comic book hero</strong
-                >
-              </p>
-          </div>
-
-      <div class="modal-footer">
-        <a href="#!" class="waves-effect waves-light btn grey darken-3 white-text favorite" type="submit" value="Favorite">Agree</a>
+              <small id="modal-rating"></small>
+            </p>
+            <br>
+            <p class="related">
+              <strong id="modal-summary"></strong>
+            </p>
+            <br>
+            <p><i id="favorite" class="material-icons red-text small"></i></p> 
+        </div>
       </div>
     </div>
 
-    </div>
     <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"

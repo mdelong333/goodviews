@@ -1,49 +1,65 @@
-// Initial array of movies
-// var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+var favorite;
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
   event.preventDefault();
 
-  var movie = $("#movie-input").val().trim();
+  var movie = $("#movie-input")
+    .val()
+    .trim();
 
-  if (!$("#movie-input").val().trim()) {
+  if (
+    !$("#movie-input")
+      .val()
+      .trim()
+  ) {
     alert("Enter a movie to search");
   } else {
-    displayMovieInfo(movie)
+    displayMovieInfo(movie);
   }
-})
+});
 
 function displayMovieInfo(movie) {
   // var OMDB_KEY = keys.omdb;
   var OMDB_KEY = "trilogy";
   // var OMDB_KEY = env.OMDB_KEY;
-  var queryURL = `https://www.omdbapi.com/?t=${movie}&apikey=${OMDB_KEY}`
+  var queryURL = `https://www.omdbapi.com/?t=${movie}&apikey=${OMDB_KEY}`;
 
   // Creating an AJAX call for the specific movie button being clicked
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-  
     console.log(response);
-    console.log(response.Title)
-    console.log(response.Poster);
     movieData = {
       poster: response.Poster,
       title: response.Title,
       summary: response.Plot,
       rating: response.Rated,
       year: response.Year
-    }
+    };
 
-    $(".searched").append(`<div class="search-display">
-    <img src="${movieData.poster}" class="poster">
-    <h3>${movieData.title}</h3>
-    <h5>${movieData.summary}</h5>
-    <h5>${movieData.rating}</h5>
-    <h5>${movieData.year}</h5>
-    </div>`)
+    $(".card").css({
+      "background-image": `url(${movieData.poster})`
+    });
+    $("#modal-title").html(`${movieData.title}`);
+    $("#modal-year").html(`${movieData.year}`);
+    $("#modal-rating").html(`Rated: ${movieData.rating}`);
+    $("#modal-summary").html(`${movieData.summary}`);
 
+    // Add To Favorites
+    favorite = $("#favorite");
+
+    $(favorite).html("favorite_border");
+
+    $(favorite).click(function() {
+      if ($(this).html("favorite")) {
+        $(this).html("favorite_border");
+      } else if ($(this).html("favorite_border")) {
+        $(this).html("favorite");
+      } else {
+        $(favorite).html("favorite_border");
+      }
+    });
   });
 }
