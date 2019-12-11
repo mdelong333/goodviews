@@ -135,5 +135,8 @@ body {
 
 #favorite,
 .test-btn {
-  z-index: 100;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
