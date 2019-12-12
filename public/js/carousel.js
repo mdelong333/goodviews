@@ -28,10 +28,10 @@ $(document).ready(function() {
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
         var newRelease = currentYear - 1;
-        console.log(newRelease);
+        // console.log(newRelease);
 
         var queryURL = `https://api.themoviedb.org/3/discover/movie?api_key=${tmdb}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${newRelease}`
-        console.log(queryURL);
+        // console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -39,7 +39,7 @@ $(document).ready(function() {
         }).then(function(response) {
 
             var results = response.results;
-            console.log(response.results);
+            // console.log(response.results);
             
             for (var r = 0; r < 10; r++) {
 
@@ -52,11 +52,12 @@ $(document).ready(function() {
                     summary: results[r].overview,
                     release: results[r].release_date
                 };
-                console.log(movieData);
+                // console.log(movieData);
 
                 $(".new-release").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}">
-                </a>`)
+                <img src="${movieData.image}" alt="${movieData.title}"><button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
+                </a>
+                `)
 
             };
 
@@ -72,10 +73,10 @@ $(document).ready(function() {
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
         var newRelease = currentYear - 1;
-        console.log(newRelease);
+        // console.log(newRelease);
 
         var queryURL = `https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=${tmdb}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-        console.log(queryURL);
+        // console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -83,7 +84,7 @@ $(document).ready(function() {
         }).then(function(response) {
 
             var results = response.results;
-            console.log(response.results);
+            // console.log(response.results);
             
             for (var r = 0; r < 20; r++) {
 
@@ -96,10 +97,11 @@ $(document).ready(function() {
                     summary: results[r].overview,
                     release: results[r].release_date
                 };
-                console.log(movieData);
+                // console.log(movieData);
 
                 $(".drama-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
+                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -116,10 +118,10 @@ $(document).ready(function() {
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
         var newRelease = currentYear - 1;
-        console.log(newRelease);
+        // console.log(newRelease);
 
         var queryURL = `https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${tmdb}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-        console.log(queryURL);
+        // console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -127,7 +129,7 @@ $(document).ready(function() {
         }).then(function(response) {
 
             var results = response.results;
-            console.log(response.results);
+            // console.log(response.results);
             
             for (var r = 0; r < 20; r++) {
 
@@ -140,10 +142,11 @@ $(document).ready(function() {
                     summary: results[r].overview,
                     release: results[r].release_date
                 };
-                console.log(movieData);
+                // console.log(movieData);
 
                 $(".horror-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
+                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -160,10 +163,10 @@ $(document).ready(function() {
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
         var newRelease = currentYear - 1;
-        console.log(newRelease);
+        // console.log(newRelease);
 
         var queryURL = `https://api.themoviedb.org/3/discover/movie?with_genres=28&api_key=${tmdb}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-        console.log(queryURL);
+        // console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -171,7 +174,7 @@ $(document).ready(function() {
         }).then(function(response) {
 
             var results = response.results;
-            console.log(response.results);
+            // console.log(response.results);
             
             for (var r = 0; r < 20; r++) {
 
@@ -184,10 +187,11 @@ $(document).ready(function() {
                     summary: results[r].overview,
                     release: results[r].release_date
                 };
-                console.log(movieData);
+                // console.log(movieData);
 
                 $(".action-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
+                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -204,10 +208,10 @@ $(document).ready(function() {
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
         var newRelease = currentYear - 1;
-        console.log(newRelease);
+        // console.log(newRelease);
 
         var queryURL = `https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${tmdb}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-        console.log(queryURL);
+        // console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -215,7 +219,7 @@ $(document).ready(function() {
         }).then(function(response) {
 
             var results = response.results;
-            console.log(response.results);
+            // console.log(response.results);
             
             for (var r = 0; r < 20; r++) {
 
@@ -228,10 +232,11 @@ $(document).ready(function() {
                     summary: results[r].overview,
                     release: results[r].release_date
                 };
-                console.log(movieData);
+                // console.log(movieData);
 
                 $(".comedy-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
+                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
