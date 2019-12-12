@@ -43,7 +43,7 @@ $(document).ready(function() {
 
                 var movieData = {
                     title: results[r].title,
-                    image: `https://image.tmdb.org/t/p/w500${results[r].poster_path}`,
+                    image: `https://image.tmdb.org/t/p/w780${results[r].poster_path}`,
                     popularity: results[r].popularity,
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
@@ -78,18 +78,6 @@ $(document).ready(function() {
     
         // Init Slider
         $('.slider').slider();
-
-        $('.modal').modal({
-            dismissible: true,
-            opacity: .75,
-            inDuration: 1000, 
-            outDuration: 200, 
-            startingTop: '4%', 
-            endingTop: '20%', 
-        }); 
-  
-          // Init Sidenav
-        $('.button-collapse').sideNav();
     };
 
 });

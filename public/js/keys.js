@@ -5,5 +5,5 @@ exports.omdb = {
 };
 
 exports.movieDB = {
-  id: process.env.movieDB_api
+  id: process.env.tmdb_api
 };
