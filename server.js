@@ -1,5 +1,6 @@
 require("dotenv").config();
 var express = require("express");
+
 // var exphbs = require("express-handlebars");
 
 var db = require("./models");
@@ -30,8 +31,8 @@ db.sequelize.sync(syncOptions).then(function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
-      PORT
     );
+    
   });
 });
 
