@@ -27,7 +27,7 @@ body {
 }
 
 .title {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 640px) {
@@ -62,7 +62,6 @@ body {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   padding: 30px;
-  background-image: url(../images/Thor-The-Dark-World.jpg);
   background-size: 100% 100%;
   width: 235px;
   height: 380px;
@@ -101,6 +100,7 @@ body {
 .card h1 {
   -webkit-transform: translateZ(100px);
   transform: translateZ(100px);
+  font-size: 1.5em;
 }
 
 .card p {
@@ -145,7 +145,11 @@ body {
   margin: 5px;
 }
 
-.searched {
-  color: white;
+#favorite,
+.test-btn {
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 /*# sourceMappingURL=style.css.map */
