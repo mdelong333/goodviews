@@ -8,12 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/reset.css" />
+
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">    <!--Import materialize.css-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">  
+
+    <!-- Compiled and minified materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
@@ -67,12 +68,10 @@
       </div>
 
       <div class="container carousel-cont">
-        <h4 class="movie-genre-titles">New Release</h4>
+        <h4 class="movie-genre-titles">New Releases</h4>
+        
         <!-- CAROUSEL -->
-        <div class="carousel">
-          <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-            <img src="./images/7tdr64aic6821.jpg" alt="">
-          </a>
+        <div class="carousel new-release">
         </div>
       </div>
 
@@ -105,41 +104,38 @@
               <img src="./images/Untitled7.png" alt="">
             </a>
           </div>
-        </div>
+      </div>
 
-        <div class="container carousel-cont">
-            <h4 class="movie-genre-titles">Drama</h4>
-            <!-- CAROUSEL -->
-            <div class="carousel">
-              <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/7tdr64aic6821.jpg" alt="">
-              </a>
-              <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/82738131.jpeg" alt="">
-              </a>
-              <a href="#three!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/jaws.jpg" alt="">
-              </a>
-              <a href="#four!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/OceansEightPoster.jpeg" alt="">
-              </a>
-              <a href="#five!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/static.jpg" alt="">
-              </a>
-              <a href="#six!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/Tag_2018_film.png" alt="">
-              </a>
-              <a href="#seven!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/Thor-The-Dark-World.jpg" alt="">
-              </a>
-              <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="./images/Untitled7.png" alt="">
-              </a>
-            </div>
+      <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">Drama</h4>
+          <!-- CAROUSEL -->
+          <div class="carousel drama-carousel">
           </div>
+      </div>
+
+      <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">Horror</h4>
+          <!-- CAROUSEL -->
+          <div class="carousel horror-carousel">
+          </div>
+      </div>
+
+      <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">Comedy</h4>
+          <!-- CAROUSEL -->
+          <div class="carousel comedy-carousel">
+          </div>
+      </div>
+
+      <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">Action</h4>
+          <!-- CAROUSEL -->
+          <div class="carousel action-carousel">
+          </div>
+      </div>
 
   <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
-  <!-- <div id="modal2" class="modal">
+    <div id="modal2" class="modal">
       <div class="modal-content card"></div>
       <div class= "white-text">
           <h1 id="modal-title"></h1>
@@ -155,7 +151,7 @@
       
           <button id="favorite"  class="material-icons red-text small"></button>
         </div>
-    </div> -->
+    </div>
 
     <!-- 3D Modal -->
     <div id="modal1" class="modal">        
@@ -181,35 +177,37 @@
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/omdb.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          // Init Carousel
-          $('.carousel').carousel();
-            // setInterval(function() {
-            // $('.carousel').carousel('next');
-            // }, 2000); // every 2 seconds
 
-          // Init Slider
-          $('.slider').slider();
+    <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-          // Modal
-          $('.modal').modal({
-            dismissible: true,
-            opacity: .75,
-            inDuration: 1000, 
-            outDuration: 200, 
-            startingTop: '4%', 
-            endingTop: '10%', 
-          }); 
+    <!-- Link homejs for New Release carousel -->
+    <script type="text/javascript" src="./js/carousel.js"></script>
+    <!-- Movie Search and to populate image carousels by genre -->
+    <script type="text/javascript" src="./js/omdb.js"></script>
 
+    <!-- <script>
+      $(document).ready(function(){
 
-          // Init Sidenav
-          $('.button-collapse').sideNav();
-        });
-      </script>
-          <script src="./js/3d-effect.js"></script>
+        // Modal
+        $('.modal').modal({
+          dismissible: true,
+          opacity: .75,
+          inDuration: 1000, 
+          outDuration: 200, 
+          startingTop: '4%', 
+          endingTop: '10%', 
+        }); 
+
+        // Init Sidenav
+        $('.button-collapse').sideNav();
+      });
+    </script> -->
+
+    <script src="./js/3d-effect.js"></script>
   </body>
 </html>

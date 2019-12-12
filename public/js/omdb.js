@@ -4,14 +4,10 @@ var favorite;
 $("#add-movie").on("click", function(event) {
   event.preventDefault();
 
-  var movie = $("#movie-input")
-    .val()
-    .trim();
+  var movie = $("#movie-input").val().trim();
 
   if (
-    !$("#movie-input")
-      .val()
-      .trim()
+    !$("#movie-input").val().trim()
   ) {
     alert("Enter a movie to search");
   } else {
@@ -40,6 +36,15 @@ function displayMovieInfo(movie) {
       favorite: false
     };
 
+    $(".searched").append(`
+    <div class="movie-searched">
+    <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
+    <h4>${movieData.title}</h4>
+    <h5>${movieData.year}</h5>
+    <h5>${movieData.rating}</h5>
+    <h5>${movieData.summary}</h5>
+    </div>
+    `);
     // Display on Modal
     // FIXME Will not display image
     $(".card").css({
