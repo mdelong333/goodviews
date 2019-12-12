@@ -48,10 +48,6 @@ body {
   margin-top: 100px;
 }
 
-a.carousel-item {
-  background-color: transparent;
-}
-
 .modal {
   background-color: rgba(151, 21, 21, 0);
   overflow-y: hidden;
