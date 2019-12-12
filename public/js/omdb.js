@@ -57,28 +57,37 @@ function displayMovieInfo(movie) {
     $(favorite).html("favorite_border");
 
     // Clicking on "favorite" heart icon
-    // FIXME nested incorrectly
-    $(favorite).click(function() {
+    $(favorite).click(function(event) {
+      event.preventDefault();
       // When unfavorited heart is clicked then...
       // display full heart and add movie to database as well as my title page
-      if ($(this).html("favorite_border")) {
-        $(this).click(function() {
-          $(this).html("favorite");
-          movieData = true;
-          // TODO add movie to database
-          console.log(movieData.title + " added to favorites");
-        });
+      if ($(this).html() == "favorite_border") {
+        $(this).html("favorite");
+        movieData.favorite = true;
+        // TODO add movie to database
+        console.log(movieData.title + " added to favorites");
+
+        //add to database
+        function insertFavorite(event) {
+          event.preventDefault();
+          var favorite = {
+            title: response.Title,
+            favorite: true
+          };
+
+          $.post("/api/favorites", favorite);
+          $newItemInput.val("");
+        }
+        insertFavorite();
       }
 
       // If favorited is clicked then...
       // display empty heart and remove movie from database as well as my titles page
-      if ($(this).html("favorite")) {
-        $(this).click(function() {
-          $(this).html("favorite_border");
-          movieData = false;
-          // TODO remove movie to database
-          console.log(movieData.title + " removed to favorites");
-        });
+      else if ($(this).html() == "favorite") {
+        $(this).html("favorite_border");
+        movieData.favorite = false;
+        // TODO remove movie to database
+        console.log(movieData.title + " removed from favorites");
       }
     });
   });

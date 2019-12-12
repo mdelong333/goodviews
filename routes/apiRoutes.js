@@ -2,30 +2,36 @@ var db = require("../models");
 // var omdb = require("./omdb");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all favorites
+  app.get("/api/favorites", function(req, res) {
+    db.project2.findAll({}).then(function(project2) {
+      res.json(project2);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new favorites
+  app.post("/api/favorites", function(req, res) {
+    db.project2.create(req.body).then(function(project2) {
+      res.json(project2);
     });
+
+    db.project2
+      .create({
+        text: req.body.text,
+        complete: req.body.complete
+      })
+      .then(function(tableElement) {
+        // We have access to the new todo as an argument inside of the callback function
+        res.json(tableElement);
+      });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
+  // Delete an favorites by id
+  app.delete("/api/favorites/:id", function(req, res) {
+    db.project2
+      .destroy({ where: { id: req.params.id } })
+      .then(function(project2) {
+        res.json(project2);
+      });
   });
-
-  // app.get("/omdb", function(req, res) {
-  //   res.sendFile(__dirname + "");
-  // });
 };
