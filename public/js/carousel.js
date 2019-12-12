@@ -61,7 +61,7 @@ $(document).ready(function() {
 
             };
 
-            initCarousel();
+            initNewRelease();
         });
 
     };
@@ -251,13 +251,23 @@ $(document).ready(function() {
             duration: 200,
             fullWidth: false
         });
-        
-        setInterval(function() {
-        $('.carousel').carousel('next');
-        }, 2000); // every 2 seconds
     
         // Init Slider
         $('.slider').slider();
     };
+
+    function initNewRelease() {
+        $('.carousel').carousel({
+            duration: 200,
+            fullWidth: false
+        });
+        
+        setInterval(function() {
+        $('.new-release').carousel('next');
+        }, 2000); // every 2 seconds
+    
+        // Init Slider
+        $('.slider').slider();
+    }
 
 });
