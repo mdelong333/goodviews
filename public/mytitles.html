@@ -8,16 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/reset.css" />
+
     <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <!--Import materialize.css-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+
+    <!-- Compiled and minified materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
@@ -55,15 +54,15 @@
         </div>
       </nav>
 
-      <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Your Movies</h4>
+      <!-- <div class="container carousel-cont">
+          <h4 class="movie-genre-titles">Your Movies</h4> -->
           <!-- CAROUSEL -->
-          <div class="carousel">
+          <!-- <div class="carousel">
             <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
               <img src="./images/7tdr64aic6821.jpg" alt="">
             </a>
           </div>
-      </div>
+      </div> -->
 
       <div class="container carousel-cont">
         <h4 class="movie-genre-titles">Watch List</h4>
@@ -75,13 +74,30 @@
         <div class="carousel faves-carousel"></div>
       </div>
 
+      <div class="container blog">
+          <h4 class="movie-genre-titles">Blog <a class="btn btn-light grey darken-2" id="blog" href="blog.html">New Post</a></h4>
+
+          <div class="blog-container">
+          </div>
+
+      </div>
+
     </div>
     <!--Import jQuery before materialize.js-->
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-2.1.1.min.js"
-    ></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Link for carousel -->
+    <script type="text/javascript" src="./js/carousel.js"></script>
+    <!-- Movie Search and to populate image carousels by genre -->
+    <script type="text/javascript" src="./js/omdb.js"></script>
+
     <script>
       $(document).ready(function() {
         // Init Carousel
