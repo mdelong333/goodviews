@@ -1,6 +1,3 @@
-// Initial array of movies
-// var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
-
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
   event.preventDefault();

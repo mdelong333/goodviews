@@ -9,11 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/reset.css" />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">    <!--Import materialize.css-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">    
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"/>
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
@@ -22,16 +20,16 @@
     <div class="page-container" >
       <nav>
         <div class="nav-wrapper black">
-          <a href="#!" class="brand-logo"
-            ><p class="title">
+          <a href="#!" class="brand-logo">
+            <p class="title">
               <span style="font-weight:100;">good</span>
               <span style="font-weight: bold; margin-left: -5px;">views</span>
-            </p></a
-          >
+            </p>
+          </a>
           <a href="#" data-activates="mobile-demo" 
-          class="button-collapse"
-            ><i class="material-icons">☰</i></a
-          >
+          class="button-collapse">
+            <i class="material-icons">☰</i>
+          </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
             <li><a href="mytitles.html">My Titles</a></li>
@@ -46,14 +44,14 @@
           </ul>
         </div>
       </nav>
- 
 
       <!-- Home screen Content -->
       <div class="container carousel-cont" >
         <h4 class="movie-genre-titles">SEE THE MOVIES YOU WANT TO SEE</h4>
+
         <!-- CAROUSEL -->
         <div class="carousel">
-          <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+          <!-- <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
             <img src="./images/7tdr64aic6821.jpg" alt="">
           </a>
           <a href="#two!" data-target="modal1" class="carousel-item btn-small modal-trigger">
@@ -76,12 +74,10 @@
           </a>
           <a href="#eight!" data-target="modal1" class="carousel-item btn-small modal-trigger">
             <img src="./images/Untitled7.png" alt="">
-          </a>
+          </a> -->
         </div>
 
-
-
-          <!-- Modal Structure -->
+    <!-- Modal Structure -->
     <div id="modal1" class="modal">
       <div class="modal-content card">
             <div class="card-content">
@@ -91,9 +87,7 @@
               </p>
               <br>
               <p class="related">
-                <strong
-                  >American superhero film based on the Marvel Comic book hero</strong
-                >
+                <strong>American superhero film based on the Marvel Comic book hero</strong>
               </p>
           </div>
         <!-- <h4>Modal Header</h4>
@@ -102,48 +96,46 @@
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
       </div> -->
+      </div>
     </div>
 
-    </div>
     <!--Import jQuery before materialize.js-->
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-2.1.1.min.js"
-    ></script>
-    <!-- omdb api -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/omdb.js"></script>
     <!-- materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script>
+    <script src="../public/js/home.js"></script>
+    <!-- <script>
       $(document).ready(function(){
-        // Init Carousel
-        $('.carousel').carousel({
-          duration: 200,
-          fullWidth: false
-        });
-          setInterval(function() {
-          $('.carousel').carousel('next');
-          }, 2000); // every 2 seconds
 
-        // Init Slider
-        $('.slider').slider();
+        // // Init Carousel
+        // $('.carousel').carousel({
+        //   duration: 200,
+        //   fullWidth: false
+        // });
+        //   setInterval(function() {
+        //   $('.carousel').carousel('next');
+        //   }, 2000); // every 2 seconds
 
-        // Init Modal
-        $('.modal').modal({
-          dismissible: true,
-          opacity: .75,
-          inDuration: 1000, 
-          outDuration: 200, 
-          startingTop: '4%', 
-          endingTop: '20%', 
-        }); 
+        // // Init Slider
+        // $('.slider').slider();
 
-        // Init Sidenav
-        $('.button-collapse').sideNav();
+        // // Init Modal
+        // $('.modal').modal({
+        //   dismissible: true,
+        //   opacity: .75,
+        //   inDuration: 1000, 
+        //   outDuration: 200, 
+        //   startingTop: '4%', 
+        //   endingTop: '20%', 
+        // }); 
+
+        // // Init Sidenav
+        // $('.button-collapse').sideNav();
       });
-    </script>
-   <!-- 3D Effect -->
+    </script> -->
+
+    <!-- 3D Effect -->
     <script src="./js/3d-effect.js"></script>
   </body>
 </html>
