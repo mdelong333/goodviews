@@ -48,6 +48,15 @@ body {
   margin-top: 100px;
 }
 
+a.carousel-item {
+  background-color: transparent;
+}
+
+a.carousel-item:hover {
+  background-color: transparent;
+  filter:drop-shadow(0 0 15px white);
+}
+
 .modal {
   background-color: rgba(151, 21, 21, 0);
   overflow-y: hidden;
@@ -151,5 +160,11 @@ body {
   cursor: pointer;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+}
+
+#blog {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */
