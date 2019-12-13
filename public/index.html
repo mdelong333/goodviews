@@ -72,30 +72,25 @@
         <div class="carousel new-release"></div>
       </div>
 
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content card">
-          <div class="card-content">
-            <h1>Thor</h1>
-            <p>
-              <small>Directed By: Kenneth Branagh</small>
-            </p>
-            <br />
-            <p class="related">
-              <strong
-                >American superhero film based on the Marvel Comic book
-                hero</strong
-              >
-            </p>
-          </div>
-          <!-- <h4>Modal Header</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div> -->
-        </div>
+      <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
+    <div id="modal1" class="modal">
+      <div class="modal-content"id="modal-image"></div>
+      <div class="white-text">
+        <h1 id="modal-title"></h1>
+        <p>
+          <small id="modal-year"></small>
+          <br />
+          <small id="modal-rating"></small>
+        </p>
+        <br />
+        <p class="related">
+          <strong id="modal-summary"></strong>
+        </p>
+
+        <button id="favorite" class="material-icons red-text"></button>
       </div>
+    </div>
+
     </div>
     <!--Import jQuery before materialize.js-->
     <!-- <script
@@ -109,6 +104,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- carousel content -->
     <script type="text/javascript" src="./js/carousel.js"></script>
+    <script type="text/javascript" src="./js/omdb.js"></script>
 
     <script>
       $(document).ready(function() {

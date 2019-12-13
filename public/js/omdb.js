@@ -74,6 +74,7 @@ function displayMovieInfo(movie) {
         // TODO add movie to database
         console.log(movieData.title + " added to favorites");
         insertFavorite();
+        addToFavePage();
       }
 
       // If favorited is clicked then...
@@ -113,3 +114,20 @@ function getFavorites(id) {
 function removeFavorite(event) {
 
 };
+
+function addToFavePage(res, err) {
+
+  console.log(movieData);
+  $(".faves").html(`
+    <div class="movie-searched">
+    <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
+    <h4>${movieData.title}</h4>
+    <h5>${movieData.year}</h5>
+    <h5>${movieData.rating}</h5>
+    <h5>${movieData.summary}</h5>
+    </div>
+    `);
+    if (err) {
+      console.log(err);
+    }
+}
