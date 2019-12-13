@@ -70,33 +70,36 @@ function displayMovieInfo(movie) {
     $(favorite).html("favorite_border");
 
     // Clicking on "favorite" heart icon
-    $(favorite).click(function(event) {
-      event.preventDefault();
-      // When unfavorited heart is clicked then...
-      // display full heart and add movie to database as well as my title page
-      if ($(this).html() === "favorite_border") {
-        $(this).html("favorite");
-        movieData.favorite = true;
-        // TODO add movie to database
-        console.log(movieData.title + " added to favorites");
-        insertFavorite();
-      }
+    $(favorite)
+      .off()
+      .on("click", function(event) {
+        event.preventDefault();
+        // When unfavorited heart is clicked then...
+        // display full heart and add movie to database as well as my title page
+        if ($(this).html() === "favorite_border") {
+          $(this).html("favorite");
+          movieData.favorite = true;
+          // TODO add movie to database
+          console.log(movieData.title + " added to favorites");
+          insertFavorite();
+        }
 
-      // If favorited is clicked then...
-      // display empty heart and remove movie from database as well as my titles page
-      else if ($(this).html() == "favorite") {
-        $(this).html("favorite_border");
-        movieData.favorite = false;
-        // var numAffectedRows = await movieData.destroy({
-        //   where: {
-        //     favorite: false // deletes all pugs whose age is 7
-        //   }
-        // })
-        // console.log(numAffectedRows) // if we had 3 pugs with the age of 7, this will be 3
-        // TODO remove movie to database
-        console.log(movieData.title + " removed from favorites");
-      }
-    });
+        // If favorited is clicked then...
+        // display empty heart and remove movie from database as well as my titles page
+        else if ($(this).html() == "favorite") {
+          $(this).html("favorite_border");
+          movieData.favorite = false;
+          // var numAffectedRows = await movieData.destroy({
+          //   where: {
+          //     favorite: false // deletes all pugs whose age is 7
+          //   }
+          // })
+          // console.log(numAffectedRows) // if we had 3 pugs with the age of 7, this will be 3
+          // TODO remove movie to database
+          console.log(movieData.title + " removed from favorites");
+          removeFavorite();
+        }
+      });
   });
 }
 
@@ -115,17 +118,15 @@ function insertFavorite(event) {
   };
   console.log(favorite);
 
-  $.post("/api/favorites", favorite);
-  // title.val("");
+  $.post("/api/favorites", favorite, getFavorites);
 }
 
-// function deleteFavorite(event) {
-//   event.stopPropogation();
-//   var id = $(this).data("id");
-//   $.ajax({
-//     method: "DELETE",
-//     url: "/api/favorites/" + id
-//   });
-// }
+function getFavorites(id) {
+  $.get("/api/favorites", function(data) {
+    favorites = data;
+    console.log(favorites);
+  });
+}
 
-// title.find("button.delete").data("id", favorite.id);
+//add to database
+function removeFavorite(event) {}
