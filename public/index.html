@@ -111,7 +111,18 @@
     <script type="text/javascript" src="./js/carousel.js"></script>
 
     <script>
-      $(document).ready(function() {
+      $(document).ready(function(){
+
+        // Init Modal
+        $('.modal').modal({
+          // dismissible: true,
+          // opacity: .75,
+          // inDuration: 1000, 
+          // outDuration: 200, 
+          // startingTop: '4%', 
+          // endingTop: '20%', 
+        }); 
+
         // Init Sidenav
         $(".sidenav").sidenav();
         // Init Modal

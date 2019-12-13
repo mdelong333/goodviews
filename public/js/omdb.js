@@ -3,6 +3,7 @@ var favorite;
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
   event.preventDefault();
+  console.log("click")
 
   var movie = $("#movie-input").val().trim();
 
@@ -46,6 +47,7 @@ function displayMovieInfo(movie) {
     // <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
     // </div>
     // `);
+    
     // Display on Modal
     // FIXME Will not display image
     $(".card").css({

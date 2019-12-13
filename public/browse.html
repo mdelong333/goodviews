@@ -176,7 +176,14 @@
     <script>
       $(document).ready(function() {
         // Modal
-        $(".modal").modal();
+        $('.modal').modal({
+          // dismissible: true,
+          // opacity: .75,
+          // inDuration: 1000, 
+          // outDuration: 200, 
+          // startingTop: '4%', 
+          // endingTop: '10%', 
+        }); 
 
         // Init Sidenav
         $(".sidenav").sidenav();
