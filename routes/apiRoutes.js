@@ -1,39 +1,29 @@
 var db = require("../models");
-var express = require("express");
-var router = express.Router();
-// var omdb = require("./omdb");
 
 module.exports = function(app) {
   // Get all favorites
   app.get("/api/favorites", function(req, res) {
-    db.project2.findAll({}).then(function(project2) {
-      res.json(project2);
+    db.Favorite.findAll({}).then(function(dbFavorite) {
+      res.json(dbFavorite);
     });
   });
 
   // Create a new favorites
   app.post("/api/favorites", function(req, res) {
-    db.project2.create(req.body).then(function(project2) {
-      res.json(project2);
-    });
+    console.log(req.body);
 
-    db.project2
-      .create({
-        text: req.body.text,
-        complete: req.body.complete
-      })
-      .then(function(tableElement) {
-        // We have access to the new todo as an argument inside of the callback function
-        res.json(tableElement);
-      });
+    db.Favorite.create({
+      title: req.body.title,
+      favorite
+    })
   });
 
-  // Delete an favorites by id
-  app.delete("/api/favorites/:id", function(req, res) {
-    db.project2
-      .destroy({ where: { id: req.params.id } })
-      .then(function(project2) {
-        res.json(project2);
-      });
-  });
+  // // Delete an favorites by id
+  // app.delete("/api/favorites/:id", function(req, res) {
+  //   db.project2
+  //     .destroy({ where: { id: req.params.id } })
+  //     .then(function(project2) {
+  //       res.json(project2);
+  //     });
+  // });
 };

@@ -65,12 +65,6 @@ a.carousel-item:hover {
           box-shadow: none;
 }
 
-#modal-image {
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 440px;
-}
-
 #modal-title {
   font-size: 3em;
   margin: 5px 0px 5px 0px;

@@ -50,9 +50,8 @@ function displayMovieInfo(movie) {
     
     // Display on Modal
     // FIXME Will not display image
-    $(".card").css({
-      "background-image": `url(${movieData.poster})`
-    });
+    
+    $("#modal-image").html(`<img src="${movieData.poster}" alt="Poster for ${movieData.title}">`);
     $("#modal-title").html(`${movieData.title}`);
     $("#modal-year").html(`${movieData.year}`);
     $("#modal-rating").html(`Rated: ${movieData.rating}`);
@@ -69,7 +68,7 @@ function displayMovieInfo(movie) {
       event.preventDefault();
       // When unfavorited heart is clicked then...
       // display full heart and add movie to database as well as my title page
-      if ($(this).html() == "favorite_border") {
+      if ($(this).html() === "favorite_border") {
         $(this).html("favorite");
         movieData.favorite = true;
         // TODO add movie to database
