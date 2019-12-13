@@ -64,7 +64,7 @@ function displayMovieInfo(movie) {
     $(favorite).html("favorite_border");
 
     // Clicking on "favorite" heart icon
-    $(favorite).click(function(event) {
+    $(favorite).off().on("click", function(event) {
       event.preventDefault();
       // When unfavorited heart is clicked then...
       // display full heart and add movie to database as well as my title page
@@ -83,6 +83,7 @@ function displayMovieInfo(movie) {
         movieData.favorite = false;
         // TODO remove movie to database
         console.log(movieData.title + " removed from favorites");
+        removeFavorite();
       }
     });
   });
@@ -97,6 +98,18 @@ function insertFavorite(event) {
   };
   console.log(favorite);
 
-  $.post("/api/favorites", favorite);
-  title.val("");
+  $.post("/api/favorites", favorite, getFavorites);
+  // title.val("");
+};
+
+function getFavorites(id) {
+  $.get("/api/favorites", function(data) {
+    favorites = data;
+    console.log(favorites);
+  });
+};
+
+//add to database
+function removeFavorite(event) {
+
 };
