@@ -50,9 +50,8 @@ function displayMovieInfo(movie) {
     
     // Display on Modal
     // FIXME Will not display image
-    $(".card").css({
-      "background-image": `url(${movieData.poster})`
-    });
+    
+    $("#modal-image").append(`<img src="${movieData.poster}" alt="Poster for ${movieData.title}">`);
     $("#modal-title").html(`${movieData.title}`);
     $("#modal-year").html(`${movieData.year}`);
     $("#modal-rating").html(`Rated: ${movieData.rating}`);
