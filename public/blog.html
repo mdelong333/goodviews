@@ -1,107 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!--Let browser know website is optimized for mobile-->
-    <meta charset="utf-8" />
-    <meta name="description" content="goodviews" />
-    <meta name="keywords" content="web design, web dev, web developer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles/reset.css" />
+<html>
+    <head>
+        <!--Let browser know website is optimized for mobile-->
+        <meta charset="utf-8" />
+        <meta name="description" content="goodviews" />
+        <meta name="keywords" content="web design, web dev, web developer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="styles/reset.css" />
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+        <!--Import Google Icon Font-->
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+            integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M"
+            crossorigin="anonymous"
+        />
 
-    <!-- Compiled and minified materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css" type="text/css" />
-    <title>goodviews</title>
-</head>
-<body>
-    <div class="page-container">
-        <nav>
-            <div class="nav-wrapper black">
-                <a href="#!" class="brand-logo">
-                    <p class="title">
-                    <span style="font-weight:100;">good</span>
-                    <span style="font-weight: bold; margin-left: -5px;">views</span>
-                    </p>
-                </a>
-                <a href="#" data-activates="mobile-demo" 
-                class="button-collapse">
-                    <i class="material-icons">☰</i>
-                </a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="mytitles.html">My Titles</a></li>
-                    <li><a href="browse.html">Browse</a></li>
-                    <li><a href="community.html">Community</a></li>
-                </ul>
-                <ul class="side-nav black" id="mobile-demo">
-                    <li><a class="white-text" href="index.html">Home</a></li>
-                    <li><a class="white-text" href="mytitles.html">My Titles</a></li>
-                    <li><a class="white-text" href="browse.html">Browse</a></li>
-                    <li><a class="white-text" href="community.html">Community</a></li>
-                </ul>
-            </div>
-        </nav>
+        <!-- Compiled and minified materialize CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
 
-        <div class="container">
-            <div class="form-container"></div>
-                <form id="blog-post">
-                    <div class="form-group">
-                        <div class="input-field">
-                            <label for="title">Title:</label>
-                            <input type="text" class="form-control" id="title">
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/style.css" type="text/css" />
+        <title>goodviews</title>
+    </head>
+    <body>
+        <div class="page-container">
+            <nav>
+                <div class="nav-wrapper black">
+                    <a href="#!" class="brand-logo">
+                        <p class="brandTitle">
+                            <span style="font-weight:100;">good</span>
+                            <span style="font-weight: bold; margin-left: -5px;">views</span>
+                        </p>
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mytitles.html">My Titles</a></li>
+                        <li><a href="browse.html">Browse</a></li>
+                        <!-- <li><a href="community.html">Community</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav black" id="mobile-demo">
+                <li><a class="white-text" href="index.html">Home</a></li>
+                <li><a class="white-text" href="mytitles.html">My Titles</a></li>
+                <li><a class="white-text" href="browse.html">Browse</a></li>
+                <!-- <li><a class="white-text" href="community.html">Community</a></li> -->
+            </ul>
+
+            <div class="container">
+                <div class="form-container"></div>
+                    <form id="blog-post">
+                        <div class="form-group">
+                            <div class="input-field">
+                                <label for="title">Title:</label>
+                                <input type="text" class="form-control" id="title">
+                            </div>
+                            <br>
+                            <div class="input-field">
+                                <label for="body">Body:</label>
+                                <textarea class="materialize-textarea" id="body"></textarea>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
                         </div>
-                        <br>
-                        <div class="input-field">
-                            <label for="body">Body:</label>
-                            <textarea class="materialize-textarea" id="body"></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- Link for carousel -->
+        <script type="text/javascript" src="./js/carousel.js"></script>
+        <!-- Movie Search and to populate image carousels by genre -->
+        <script type="text/javascript" src="./js/omdb.js"></script>
 
-    <!-- Link for carousel -->
-    <script type="text/javascript" src="./js/carousel.js"></script>
-    <!-- Movie Search and to populate image carousels by genre -->
-    <script type="text/javascript" src="./js/omdb.js"></script>
+        <script>
+        $(document).ready(function(){
 
-    <script>
-    $(document).ready(function(){
-
-        // Modal
-        $('.modal').modal({
+            // Modal
+            $(".modal").modal({
             // dismissible: true,
-            // opacity: .75,
-            // inDuration: 1000, 
-            // outDuration: 200, 
-            // startingTop: '4%', 
-            // endingTop: '10%', 
-        }); 
+            // opacity: 0.75,
+            // inDuration: 1000,
+            // outDuration: 200,
+            // startingTop: "4%",
+            // endingTop: "10%"
+            });
 
-        // Init Sidenav
-        $('.button-collapse').sideNav();
-    });
-    </script>
-    <script src="./js/3d-effect.js"></script>
-</body>
+            // Init Sidenav
+            $(".sidenav").sidenav();
+        });
+        </script>
+        <script src="./js/3d-effect.js"></script>
+    </body>
 </html>
