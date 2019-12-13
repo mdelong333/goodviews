@@ -10,13 +10,27 @@
     <link rel="stylesheet" href="styles/reset.css" />
 
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+      integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M"
+      crossorigin="anonymous"
+    />
 
     <!-- Compiled and minified materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
@@ -24,42 +38,44 @@
     <div class="page-container">
       <nav>
         <div class="nav-wrapper black">
-          <a href="#!" class="brand-logo"
-            ><p>
+          <a href="#!" class="brand-logo">
+            <p class="brandTitle">
               <span style="font-weight:100;">good</span>
               <span style="font-weight: bold; margin-left: -5px;">views</span>
-            </p></a
-          >
-          <a href="#" data-activates="mobile-demo" 
-          class="button-collapse"
-            ><i class="material-icons">☰</i></a
-          >
+            </p>
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
             <li><a href="mytitles.html">My Titles</a></li>
             <li><a href="browse.html">Browse</a></li>
-            <li><a href="community.html">Community</a></li>
-          </ul>
-          <ul class="side-nav black" id="mobile-demo">
-            <li><a class="white-text" href="index.html">Home</a></li>
-            <li><a class="white-text" href="mytitles.html">My Titles</a></li>
-            <li><a class="white-text" href="browse.html">Browse</a></li>
-            <li><a class="white-text" href="community.html">Community</a></li>
+            <!-- <li><a href="community.html">Community</a></li> -->
           </ul>
         </div>
       </nav>
 
+      <ul class="sidenav black" id="mobile-demo">
+        <li><a class="white-text" href="index.html">Home</a></li>
+        <li><a class="white-text" href="mytitles.html">My Titles</a></li>
+        <li><a class="white-text" href="browse.html">Browse</a></li>
+        <!-- <li><a class="white-text" href="community.html">Community</a></li> -->
+      </ul>
+
       <!-- omdb api movie search test -->
-  
+
       <div class="container movie-search">
         <h1 id="movie-search-title">Search Movies</h1>
-        
+
         <form id="movie-form">
           <label for="movie-input"></label>
           <input type="text" id="movie-input" />
           <br />
           <!-- Button triggers new movie to be added -->
-          <input class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie" id="add-movie" type="submit" value="Search" data-target="modal1" data-target="modal2"/>
+          <input class="waves-effect waves-light btn grey darken-3 white-text
+          modal-trigger add-movie" id="add-movie" type="submit" value="Search"
+          data-target="modal1/>
         </form>
         <div class="container searched"></div>
         <!-- movie buttons -->
@@ -70,58 +86,53 @@
 
       <div class="container carousel-cont">
         <h4 class="movie-genre-titles">New Releases</h4>
-        
+
         <!-- CAROUSEL -->
-        <div class="carousel new-release">
-        </div>
+        <div class="carousel new-release"></div>
       </div>
 
       <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Drama</h4>
-          <!-- CAROUSEL -->
-          <div class="carousel drama-carousel">
-          </div>
+        <h4 class="movie-genre-titles">Drama</h4>
+        <!-- CAROUSEL -->
+        <div class="carousel drama-carousel"></div>
       </div>
 
       <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Horror</h4>
-          <!-- CAROUSEL -->
-          <div class="carousel horror-carousel">
-          </div>
+        <h4 class="movie-genre-titles">Horror</h4>
+        <!-- CAROUSEL -->
+        <div class="carousel horror-carousel"></div>
       </div>
 
       <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Comedy</h4>
-          <!-- CAROUSEL -->
-          <div class="carousel comedy-carousel">
-          </div>
+        <h4 class="movie-genre-titles">Comedy</h4>
+        <!-- CAROUSEL -->
+        <div class="carousel comedy-carousel"></div>
       </div>
 
       <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Action</h4>
-          <!-- CAROUSEL -->
-          <div class="carousel action-carousel">
-          </div>
+        <h4 class="movie-genre-titles">Action</h4>
+        <!-- CAROUSEL -->
+        <div class="carousel action-carousel"></div>
       </div>
     </div>
 
-  <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
-  <div id="modal1" class="modal">
+    <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
+    <div id="modal1" class="modal">
       <div class="modal-content card"></div>
-      <div class= "white-text">
-          <h1 id="modal-title"></h1>
-          <p>
-            <small id="modal-year"></small>
-            <br>
-            <small id="modal-rating"></small>
-          </p>
-          <br>
-          <p class="related">
-            <strong id="modal-summary"></strong>
-          </p>
-      
-          <button id="favorite"  class="material-icons red-text small"></button>
-        </div>
+      <div class="white-text">
+        <h1 id="modal-title"></h1>
+        <p>
+          <small id="modal-year"></small>
+          <br />
+          <small id="modal-rating"></small>
+        </p>
+        <br />
+        <p class="related">
+          <strong id="modal-summary"></strong>
+        </p>
+
+        <button id="favorite" class="material-icons red-text small"></button>
+      </div>
     </div>
 
     <!-- 3D Modal -->
@@ -147,11 +158,12 @@
     </div> -->
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
     <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -162,8 +174,7 @@
     <script type="text/javascript" src="./js/omdb.js"></script>
 
     <script>
-      $(document).ready(function(){
-
+      $(document).ready(function() {
         // Modal
         $('.modal').modal({
           // dismissible: true,
@@ -175,7 +186,7 @@
         }); 
 
         // Init Sidenav
-        $('.button-collapse').sideNav();
+        $(".sidenav").sidenav();
       });
     </script>
 

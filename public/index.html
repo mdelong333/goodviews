@@ -10,11 +10,27 @@
     <link rel="stylesheet" href="styles/reset.css" />
 
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+      integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M"
+      crossorigin="anonymous"
+    />
 
     <!-- Compiled and minified materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
@@ -24,55 +40,54 @@
       <nav>
         <div class="nav-wrapper black">
           <a href="#!" class="brand-logo">
-            <p class="title">
+            <p class="brandTitle">
               <span style="font-weight:100;">good</span>
               <span style="font-weight: bold; margin-left: -5px;">views</span>
             </p>
           </a>
-          <a href="#" data-activates="mobile-demo" 
-          class="button-collapse">
-            <i class="material-icons">☰</i>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
             <li><a href="mytitles.html">My Titles</a></li>
             <li><a href="browse.html">Browse</a></li>
-            <li><a href="community.html">Community</a></li>
-          </ul>
-          <ul class="side-nav black" id="mobile-demo">
-            <li><a class="white-text" href="index.html">Home</a></li>
-            <li><a class="white-text" href="mytitles.html">My Titles</a></li>
-            <li><a class="white-text" href="browse.html">Browse</a></li>
-            <li><a class="white-text" href="community.html">Community</a></li>
+            <!-- <li><a href="community.html">Community</a></li> -->
           </ul>
         </div>
       </nav>
-    
-    
+
+      <ul class="sidenav black" id="mobile-demo">
+        <li><a class="white-text" href="index.html">Home</a></li>
+        <li><a class="white-text" href="mytitles.html">My Titles</a></li>
+        <li><a class="white-text" href="browse.html">Browse</a></li>
+        <!-- <li><a class="white-text" href="community.html">Community</a></li> -->
+      </ul>
 
       <!-- Home screen Content -->
-      <div class="container carousel-cont" >
+      <div class="container carousel-cont">
         <h4 class="movie-genre-titles">SEE THE MOVIES YOU WANT TO SEE</h4>
 
         <!-- CAROUSEL -->
-        <div class="carousel new-release">
-        </div>
+        <div class="carousel new-release"></div>
       </div>
 
-
-          <!-- Modal Structure -->
+      <!-- Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content card">
-              <div class="card-content">
-                <h1>Thor</h1>
-                <p>
-                  <small>Directed By: Kenneth Branagh</small>
-                </p>
-                <br>
-                <p class="related">
-                  <strong>American superhero film based on the Marvel Comic book hero</strong>
-                </p>
-              </div>
+          <div class="card-content">
+            <h1>Thor</h1>
+            <p>
+              <small>Directed By: Kenneth Branagh</small>
+            </p>
+            <br />
+            <p class="related">
+              <strong
+                >American superhero film based on the Marvel Comic book
+                hero</strong
+              >
+            </p>
+          </div>
           <!-- <h4>Modal Header</h4>
           <p>A bunch of text</p>
         </div>
@@ -83,15 +98,16 @@
       </div>
     </div>
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-
     <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- carousel content -->
     <script type="text/javascript" src="./js/carousel.js"></script>
 
     <script>
@@ -108,8 +124,9 @@
         }); 
 
         // Init Sidenav
-        $('.button-collapse').sideNav();
-
+        $(".sidenav").sidenav();
+        // Init Modal
+        $(".modal").modal();
       });
     </script>
     <!-- 3D Effect -->

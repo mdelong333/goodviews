@@ -26,7 +26,7 @@ body {
   overflow-y: hidden;
 }
 
-.title {
+.brandTitle {
   margin-left: 20px;
   @media screen and (max-width: 640px) {
     margin-left: 0px;
@@ -43,6 +43,15 @@ body {
 
 .carousel-container {
   margin-top: 100px;
+}
+
+a.carousel-item {
+  background-color: transparent;
+}
+
+a.carousel-item:hover {
+  background-color: transparent;
+  filter:drop-shadow(0 0 15px white);
 }
 
 .modal {
