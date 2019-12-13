@@ -49,8 +49,8 @@
           </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
-            <li><a href="mytitles.html">My Titles</a></li>
             <li><a href="browse.html">Browse</a></li>
+            <li><a href="mytitles.html">My Titles</a></li>
             <!-- <li><a href="community.html">Community</a></li> -->
           </ul>
         </div>
@@ -58,8 +58,8 @@
 
       <ul class="sidenav black" id="mobile-demo">
         <li><a class="white-text" href="index.html">Home</a></li>
-        <li><a class="white-text" href="mytitles.html">My Titles</a></li>
         <li><a class="white-text" href="browse.html">Browse</a></li>
+        <li><a class="white-text" href="mytitles.html">My Titles</a></li>
         <!-- <li><a class="white-text" href="community.html">Community</a></li> -->
       </ul>
 
@@ -135,7 +135,7 @@
           <strong id="modal-summary"></strong>
         </p>
 
-        <button id="favorite" class="material-icons red-text small"></button>
+        <button id="favorite" class="material-icons red-text"></button>
       </div>
     </div>
 
@@ -181,12 +181,12 @@
       $(document).ready(function() {
         // Modal
         $(".modal").modal({
-          // dismissible: true,
-          // opacity: 0.75,
-          // inDuration: 1000,
-          // outDuration: 200,
-          // startingTop: "4%",
-          // endingTop: "10%"
+          dismissible: true,
+          opacity: 0.75,
+          inDuration: 1000,
+          outDuration: 200,
+          startingTop: "4%",
+          endingTop: "10%"
         });
 
         // Init Sidenav
