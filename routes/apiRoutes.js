@@ -1,4 +1,6 @@
 var db = require("../models");
+var express = require("express");
+var router = express.Router();
 // var omdb = require("./omdb");
 
 module.exports = function(app) {

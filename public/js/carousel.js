@@ -1,18 +1,3 @@
-// require("dotenv").config();
-// var keys = require("./keys");
-// var axios = require("axios");
-
-// var tmdb = (keys.tmdb);
-// console.log(tmdb.id);
-
-// var currentTime = new Date();
-// var currentYear = currentTime.getFullYear()
-// var newRelease = currentYear - 1;
-// console.log(newRelease);
-
-// var queryURL = `https://api.themoviedb.org/3/discover/movie?api_key=${tmdb.id}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${newRelease}`
-// console.log(queryURL);
-
 $(document).ready(function() {
     
     newReleaseCarousel();
@@ -50,18 +35,21 @@ $(document).ready(function() {
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
                     summary: results[r].overview,
-                    release: results[r].release_date
+                    release: results[r].release_date,
+                    favorite: false
                 };
                 // console.log(movieData);
 
                 $(".new-release").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}"><button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
+                <img src="${movieData.image}" alt="${movieData.title}">
                 </a>
                 `)
 
             };
 
             initNewRelease();
+            // favorite();
+            
         });
 
     };
@@ -95,13 +83,13 @@ $(document).ready(function() {
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
                     summary: results[r].overview,
-                    release: results[r].release_date
+                    release: results[r].release_date,
+                    favorite: false
                 };
                 // console.log(movieData);
 
                 $(".drama-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
-                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -140,13 +128,13 @@ $(document).ready(function() {
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
                     summary: results[r].overview,
-                    release: results[r].release_date
+                    release: results[r].release_date,
+                    favorite: false
                 };
                 // console.log(movieData);
 
                 $(".horror-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
-                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -185,13 +173,13 @@ $(document).ready(function() {
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
                     summary: results[r].overview,
-                    release: results[r].release_date
+                    release: results[r].release_date,
+                    favorite: false
                 };
                 // console.log(movieData);
 
                 $(".action-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
-                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -230,13 +218,13 @@ $(document).ready(function() {
                     genreID: results[r].genre_ids,
                     avgRating: results[r].vote_average,
                     summary: results[r].overview,
-                    release: results[r].release_date
+                    release: results[r].release_date,
+                    favorite: false
                 };
                 // console.log(movieData);
 
                 $(".comedy-carousel").append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
                 <img src="${movieData.image}" alt="${movieData.title}">
-                <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
                 </a>`)
 
             };
@@ -268,6 +256,6 @@ $(document).ready(function() {
     
         // Init Slider
         $('.slider').slider();
-    }
+    };
 
 });

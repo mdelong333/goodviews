@@ -24,43 +24,45 @@
     <div class="page-container">
         <nav>
             <div class="nav-wrapper black">
-            <a href="#!" class="brand-logo">
-                <p class="title">
-                <span style="font-weight:100;">good</span>
-                <span style="font-weight: bold; margin-left: -5px;">views</span>
-                </p>
-            </a>
-            <a href="#" data-activates="mobile-demo" 
-            class="button-collapse">
-                <i class="material-icons">☰</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="mytitles.html">My Titles</a></li>
-                <li><a href="browse.html">Browse</a></li>
-                <li><a href="community.html">Community</a></li>
-            </ul>
-            <ul class="side-nav black" id="mobile-demo">
-                <li><a class="white-text" href="index.html">Home</a></li>
-                <li><a class="white-text" href="mytitles.html">My Titles</a></li>
-                <li><a class="white-text" href="browse.html">Browse</a></li>
-                <li><a class="white-text" href="community.html">Community</a></li>
-            </ul>
+                <a href="#!" class="brand-logo">
+                    <p class="title">
+                    <span style="font-weight:100;">good</span>
+                    <span style="font-weight: bold; margin-left: -5px;">views</span>
+                    </p>
+                </a>
+                <a href="#" data-activates="mobile-demo" 
+                class="button-collapse">
+                    <i class="material-icons">☰</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mytitles.html">My Titles</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+                <ul class="side-nav black" id="mobile-demo">
+                    <li><a class="white-text" href="index.html">Home</a></li>
+                    <li><a class="white-text" href="mytitles.html">My Titles</a></li>
+                    <li><a class="white-text" href="browse.html">Browse</a></li>
+                    <li><a class="white-text" href="community.html">Community</a></li>
+                </ul>
             </div>
         </nav>
 
-
         <div class="container">
-            <div class="form-container">
+            <div class="form-container"></div>
                 <form id="blog-post">
                     <div class="form-group">
-                        <label for="title">Title:</label>
-                        <input type="text" class="form-control" id="title">
+                        <div class="input-field">
+                            <label for="title">Title:</label>
+                            <input type="text" class="form-control" id="title">
+                        </div>
                         <br>
+                        <div class="input-field">
+                            <label for="body">Body:</label>
+                            <textarea class="materialize-textarea" id="body"></textarea>
+                        </div>
                         <br>
-                        <label for="body">Body:</label>
-                        <textarea class="form-control" rows="15" id="body"></textarea>
-                        <hr>
                         <button type="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
                     </div>
                 </form>
@@ -88,12 +90,12 @@
 
         // Modal
         $('.modal').modal({
-            dismissible: true,
-            opacity: .75,
-            inDuration: 1000, 
-            outDuration: 200, 
-            startingTop: '4%', 
-            endingTop: '10%', 
+            // dismissible: true,
+            // opacity: .75,
+            // inDuration: 1000, 
+            // outDuration: 200, 
+            // startingTop: '4%', 
+            // endingTop: '10%', 
         }); 
 
         // Init Sidenav
