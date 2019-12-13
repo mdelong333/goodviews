@@ -86,23 +86,19 @@
       <div class="container blog">
         <h4 class="movie-genre-titles">
           Blog
-          <a class="btn btn-light grey darken-2" id="blog" href="blog.html"
-            >New Post</a
-          >
+          <a class="btn btn-light grey darken-2" id="blog" href="blog.html">New Post</a>
         </h4>
 
         <div class="blog-container"></div>
       </div>
     </div>
     <!--Import jQuery before materialize.js-->
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-2.1.1.min.js"
-    ></script>
+    ></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
     <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -114,20 +110,21 @@
 
     <script>
       $(document).ready(function() {
-        // Init Carousel
-        $(".carousel").carousel();
-        // setInterval(function() {
-        // $('.carousel').carousel('next');
-        // }, 2000); // every 2 seconds
-
-        // Init Slider
-        $(".slider").slider();
-
+        
         // Init Modal
-        $(".modal").modal();
+        $('.modal').modal({
+          // dismissible: true,
+          // opacity: .75,
+          // inDuration: 1000, 
+          // outDuration: 200, 
+          // startingTop: '4%', 
+          // endingTop: '20%', 
+        }); 
 
         // Init Sidenav
         $(".sidenav").sidenav();
+        // Init Modal
+        $(".modal").modal();
       });
     </script>
     <script src="./js/3d-effect.js"></script>
