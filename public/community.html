@@ -7,7 +7,7 @@
     <meta name="keywords" content="web design, web dev, web developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"
@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="styles/style.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
   <body>
@@ -54,7 +54,9 @@
           </ul>
         </div>
       </nav>
+      <main id="swup" class="transition-fade">
     </div>
+
     <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"
@@ -87,5 +89,10 @@
       });
     </script>
     <script src="./js/3d-effect.js"></script>
+     
+    <!-- Page Transitions -->
+     <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+     <script defer src="./js/page-transitions.js"></script>
+   </main>
   </body>
 </html>

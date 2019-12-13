@@ -21,7 +21,8 @@
     "nodemon": "^2.0.1",
     "omdb": "^0.8.0",
     "path": "^0.12.7",
-    "sequelize": "^5.21.2"
+    "sequelize": "^5.21.2",
+    "swup": "^2.0.8"
   },
   "devDependencies": {
     "chai": "^4.2.0",

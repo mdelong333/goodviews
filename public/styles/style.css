@@ -15,6 +15,7 @@ body {
   perspective: 1000px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  overflow-x: hidden;
 }
 
 .page-container {
@@ -162,4 +163,23 @@ a.carousel-item:hover {
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
+
+/* page-transitions */
+.transition-fade {
+  opacity: 1;
+  transition: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0);
+}
+
 /*# sourceMappingURL=style.css.map */
