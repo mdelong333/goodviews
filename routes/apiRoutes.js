@@ -14,7 +14,7 @@ module.exports = function(app) {
 
     db.Favorite.create({
       title: req.body.title,
-      favorite
+      fave: true
     })
   });
 

@@ -73,18 +73,6 @@ function displayMovieInfo(movie) {
         movieData.favorite = true;
         // TODO add movie to database
         console.log(movieData.title + " added to favorites");
-
-        //add to database
-        function insertFavorite(event) {
-          event.preventDefault();
-          var favorite = {
-            title: response.Title,
-            favorite: true
-          };
-
-          $.post("/api/favorites", favorite);
-          $newItemInput.val("");
-        }
         insertFavorite();
       }
 
@@ -99,3 +87,16 @@ function displayMovieInfo(movie) {
     });
   });
 }
+
+//add to database
+function insertFavorite(event) {
+  
+  var favorite = {
+    title: movieData.title,
+    favorite: true
+  };
+  console.log(favorite);
+
+  $.post("/api/favorites", favorite);
+  title.val("");
+};
