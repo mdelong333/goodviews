@@ -1,0 +1,204 @@
+[1mdiff --git a/public/browse.html b/public/browse.html[m
+[1mindex a1d7582..7fa5e1c 100644[m
+[1m--- a/public/browse.html[m
+[1m+++ b/public/browse.html[m
+[36m@@ -10,13 +10,27 @@[m
+     <link rel="stylesheet" href="styles/reset.css" />[m
+ [m
+     <!--Import Google Icon Font-->[m
+[31m-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet"> [m
+[31m-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">[m
+[32m+[m[32m    <link[m
+[32m+[m[32m      href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap"[m
+[32m+[m[32m      rel="stylesheet"[m
+[32m+[m[32m    />[m
+[32m+[m[32m    <link[m
+[32m+[m[32m      rel="stylesheet"[m
+[32m+[m[32m      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"[m
+[32m+[m[32m      integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M"[m
+[32m+[m[32m      crossorigin="anonymous"[m
+[32m+[m[32m    />[m
+ [m
+     <!-- Compiled and minified materialize CSS -->[m
+[31m-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">[m
+[31m-    [m
+[31m-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">[m
+[32m+[m[32m    <link[m
+[32m+[m[32m      rel="stylesheet"[m
+[32m+[m[32m      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"[m
+[32m+[m[32m    />[m
+[32m+[m
+[32m+[m[32m    <link[m
+[32m+[m[32m      href="https://fonts.googleapis.com/icon?family=Material+Icons"[m
+[32m+[m[32m      rel="stylesheet"[m
+[32m+[m[32m    />[m
+     <link rel="stylesheet" href="styles/style.css" type="text/css" />[m
+     <title>goodviews</title>[m
+   </head>[m
+[36m@@ -30,8 +44,7 @@[m
+               <span style="font-weight: bold; margin-left: -5px;">views</span>[m
+             </p></a[m
+           >[m
+[31m-          <a href="#" data-activates="mobile-demo" [m
+[31m-          class="button-collapse"[m
+[32m+[m[32m          <a href="#" data-activates="mobile-demo" class="button-collapse"[m
+             ><i class="material-icons">☰</i></a[m
+           >[m
+           <ul class="right hide-on-med-and-down">[m
+[36m@@ -50,16 +63,22 @@[m
+       </nav>[m
+ [m
+       <!-- omdb api movie search test -->[m
+[31m-  [m
+[32m+[m
+       <div class="container movie-search">[m
+         <h1 id="movie-search-title">Search Movies</h1>[m
+[31m-        [m
+[32m+[m
+         <form id="movie-form">[m
+           <label for="movie-input"></label>[m
+           <input type="text" id="movie-input" />[m
+           <br />[m
+           <!-- Button triggers new movie to be added -->[m
+[31m-          <input class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie" id="add-movie" type="submit" value="Search" data-target="modal1" data-target="modal2"/>[m
+[32m+[m[32m          <input[m
+[32m+[m[32m            class="waves-effect waves-light btn grey darken-3 white-text modal-trigger add-movie"[m
+[32m+[m[32m            id="add-movie"[m
+[32m+[m[32m            type="submit"[m
+[32m+[m[32m            value="Search"[m
+[32m+[m[32m            data-target="modal1"[m
+[32m+[m[32m          />[m
+         </form>[m
+         <div class="container searched"></div>[m
+         <!-- movie buttons -->[m
+[36m@@ -70,58 +89,53 @@[m
+ [m
+       <div class="container carousel-cont">[m
+         <h4 class="movie-genre-titles">New Releases</h4>[m
+[31m-        [m
+[32m+[m
+         <!-- CAROUSEL -->[m
+[31m-        <div class="carousel new-release">[m
+[31m-        </div>[m
+[32m+[m[32m        <div class="carousel new-release"></div>[m
+       </div>[m
+ [m
+       <div class="container carousel-cont">[m
+[31m-          <h4 class="movie-genre-titles">Drama</h4>[m
+[31m-          <!-- CAROUSEL -->[m
+[31m-          <div class="carousel drama-carousel">[m
+[31m-          </div>[m
+[32m+[m[32m        <h4 class="movie-genre-titles">Drama</h4>[m
+[32m+[m[32m        <!-- CAROUSEL -->[m
+[32m+[m[32m        <div class="carousel drama-carousel"></div>[m
+       </div>[m
+ [m
+       <div class="container carousel-cont">[m
+[31m-          <h4 class="movie-genre-titles">Horror</h4>[m
+[31m-          <!-- CAROUSEL -->[m
+[31m-          <div class="carousel horror-carousel">[m
+[31m-          </div>[m
+[32m+[m[32m        <h4 class="movie-genre-titles">Horror</h4>[m
+[32m+[m[32m        <!-- CAROUSEL -->[m
+[32m+[m[32m        <div class="carousel horror-carousel"></div>[m
+       </div>[m
+ [m
+       <div class="container carousel-cont">[m
+[31m-          <h4 class="movie-genre-titles">Comedy</h4>[m
+[31m-          <!-- CAROUSEL -->[m
+[31m-          <div class="carousel comedy-carousel">[m
+[31m-          </div>[m
+[32m+[m[32m        <h4 class="movie-genre-titles">Comedy</h4>[m
+[32m+[m[32m        <!-- CAROUSEL -->[m
+[32m+[m[32m        <div class="carousel comedy-carousel"></div>[m
+       </div>[m
+ [m
+       <div class="container carousel-cont">[m
+[31m-          <h4 class="movie-genre-titles">Action</h4>[m
+[31m-          <!-- CAROUSEL -->[m
+[31m-          <div class="carousel action-carousel">[m
+[31m-          </div>[m
+[32m+[m[32m        <h4 class="movie-genre-titles">Action</h4>[m
+[32m+[m[32m        <!-- CAROUSEL -->[m
+[32m+[m[32m        <div class="carousel action-carousel"></div>[m
+       </div>[m
+     </div>[m
+ [m
+[31m-  <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->[m
+[31m-  <div id="modal1" class="modal">[m
+[32m+[m[32m    <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->[m
+[32m+[m[32m    <div id="modal1" class="modal">[m
+       <div class="modal-content card"></div>[m
+[31m-      <div class= "white-text">[m
+[31m-          <h1 id="modal-title"></h1>[m
+[31m-          <p>[m
+[31m-            <small id="modal-year"></small>[m
+[31m-            <br>[m
+[31m-            <small id="modal-rating"></small>[m
+[31m-          </p>[m
+[31m-          <br>[m
+[31m-          <p class="related">[m
+[31m-            <strong id="modal-summary"></strong>[m
+[31m-          </p>[m
+[31m-      [m
+[31m-          <button id="favorite"  class="material-icons red-text small"></button>[m
+[31m-        </div>[m
+[32m+[m[32m      <div class="white-text">[m
+[32m+[m[32m        <h1 id="modal-title"></h1>[m
+[32m+[m[32m        <p>[m
+[32m+[m[32m          <small id="modal-year"></small>[m
+[32m+[m[32m          <br />[m
+[32m+[m[32m          <small id="modal-rating"></small>[m
+[32m+[m[32m        </p>[m
+[32m+[m[32m        <br />[m
+[32m+[m[32m        <p class="related">[m
+[32m+[m[32m          <strong id="modal-summary"></strong>[m
+[32m+[m[32m        </p>[m
+[32m+[m
+[32m+[m[32m        <button id="favorite" class="material-icons red-text small"></button>[m
+[32m+[m[32m      </div>[m
+     </div>[m
+ [m
+     <!-- 3D Modal -->[m
+[36m@@ -147,7 +161,10 @@[m
+     </div> -->[m
+ [m
+     <!--Import jQuery before materialize.js-->[m
+[31m-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>[m
+[32m+[m[32m    <script[m
+[32m+[m[32m      type="text/javascript"[m
+[32m+[m[32m      src="https://code.jquery.com/jquery-2.1.1.min.js"[m
+[32m+[m[32m    ></script>[m
+ [m
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>[m
+ [m
+[36m@@ -162,20 +179,19 @@[m
+     <script type="text/javascript" src="./js/omdb.js"></script>[m
+ [m
+     <script>[m
+[31m-      $(document).ready(function(){[m
+[31m-[m
+[32m+[m[32m      $(document).ready(function() {[m
+         // Modal[m
+[31m-        $('.modal').modal({[m
+[32m+[m[32m        $(".modal").modal({[m
+           dismissible: true,[m
+[31m-          opacity: .75,[m
+[31m-          inDuration: 1000, [m
+[31m-          outDuration: 200, [m
+[31m-          startingTop: '4%', [m
+[31m-          endingTop: '10%', [m
+[31m-        }); [m
+[32m+[m[32m          opacity: 0.75,[m
+[32m+[m[32m          inDuration: 1000,[m
+[32m+[m[32m          outDuration: 200,[m
+[32m+[m[32m          startingTop: "4%",[m
+[32m+[m[32m          endingTop: "10%"[m
+[32m+[m[32m        });[m
+ [m
+         // Init Sidenav[m
+[31m-        $('.button-collapse').sideNav();[m
+[32m+[m[32m        $(".button-collapse").sideNav();[m
+       });[m
+     </script>[m
+ [m
