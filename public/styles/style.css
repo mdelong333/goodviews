@@ -48,6 +48,16 @@ body {
   margin-top: 100px;
 }
 
+a.carousel-item {
+  background-color: transparent;
+}
+
+a.carousel-item:hover {
+  background-color: transparent;
+  -webkit-filter: drop-shadow(0 0 15px white);
+          filter: drop-shadow(0 0 15px white);
+}
+
 .modal {
   background-color: rgba(151, 21, 21, 0);
   overflow-y: hidden;
@@ -137,7 +147,7 @@ body {
   height: 25px;
 }
 
-.add-movie {
+#add-movie {
   margin-bottom: 15px;
 }
 

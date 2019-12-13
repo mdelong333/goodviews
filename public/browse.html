@@ -73,9 +73,13 @@
           <input type="text" id="movie-input" />
           <br />
           <!-- Button triggers new movie to be added -->
-          <input class="waves-effect waves-light btn grey darken-3 white-text
-          modal-trigger add-movie" id="add-movie" type="submit" value="Search"
-          data-target="modal1/>
+          <a
+            class="waves-effect waves-light btn grey darken-3 white-text
+          modal-trigger"
+            id="add-movie"
+            href="#modal1"
+            >Search</a
+          >
         </form>
         <div class="container searched"></div>
         <!-- movie buttons -->
@@ -118,7 +122,7 @@
 
     <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
     <div id="modal1" class="modal">
-      <div class="modal-content card"></div>
+      <div class="modal-content" id="modal-content"></div>
       <div class="white-text">
         <h1 id="modal-title"></h1>
         <p>
@@ -176,14 +180,14 @@
     <script>
       $(document).ready(function() {
         // Modal
-        $('.modal').modal({
+        $(".modal").modal({
           // dismissible: true,
-          // opacity: .75,
-          // inDuration: 1000, 
-          // outDuration: 200, 
-          // startingTop: '4%', 
-          // endingTop: '10%', 
-        }); 
+          // opacity: 0.75,
+          // inDuration: 1000,
+          // outDuration: 200,
+          // startingTop: "4%",
+          // endingTop: "10%"
+        });
 
         // Init Sidenav
         $(".sidenav").sidenav();
