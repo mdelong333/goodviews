@@ -70,22 +70,12 @@
 
         <form id="movie-form">
           <label for="movie-input"></label>
-          <input type="text" id="movie-input" />
-          <br />
+          <input type="text" id="movie-input">
+          <br>
           <!-- Button triggers new movie to be added -->
-          <a
-            class="waves-effect waves-light btn grey darken-3 white-text
-          modal-trigger"
-            id="add-movie"
-            href="#modal1"
-            >Search</a
-          >
+          <button class="waves-effect waves-light btn grey darken-3 white-text modal-trigger" id="add-movie" type="submit" data-target="modal1">Search</button>
         </form>
         <div class="container searched"></div>
-        <!-- movie buttons -->
-        <div id="buttons-view"></div>
-        <!-- Movies will Get Dumped Here -->
-        <div id="movies-view"></div>
       </div>
 
       <div class="container carousel-cont">
@@ -154,7 +144,6 @@
               <strong id="modal-summary"></strong>
             </p>
             <br>
-       
             <p>
             <button id="favorite" class="material-icons red-text small"></button></p>
         </div>
