@@ -1,3 +1,6 @@
+var favorite;
+var favorites;
+
 $(document).ready(function() {
   newReleaseCarousel();
   dramaCarousel();
@@ -240,12 +243,19 @@ $(document).ready(function() {
 
 // clicking on carousel item
 function showInfo(event) {
-  var imageTitle = event.alt;
-  var imageUrl = event.currentSrc;
+  movieData = {
+    poster: event.currentSrc,
+    title: event.alt,
+    // summary: response.Plot,
+    // rating: response.Rated,
+    // year: response.Year,
+    favorite: false
+  };
+
   $("#modal-image").html(
-    `<img src="${imageUrl}" alt="Poster for ${imageTitle}">`
+    `<img src="${movieData.poster}" alt="Poster for ${movieData.title}">`
   );
-  $("#modal-title").html(`${imageTitle}`);
+  $("#modal-title").html(`${movieData.title}`);
   //   $("#modal-year").html(`${movieData.year}`);
   //   $("#modal-rating").html(`Rated: ${movieData.rating}`);
   //   $("#modal-summary").html(`${movieData.summary}`);
@@ -281,4 +291,101 @@ function showInfo(event) {
         deleteFavorite();
       }
     });
+}
+
+// add to database
+function insertFavorite(event) {
+  var favorite = {
+    title: movieData.title,
+    poster: movieData.poster,
+    // summary: movieData.summary,
+    // rating: movieData.rating,
+    // year: movieData.year,
+    favorite: true
+  };
+  console.log(favorite);
+
+  $.post("/api/favorites", favorite, getFavorites);
+}
+
+function deleteFavorite(event) {
+  var id = $(this).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: "/api/favorites" + id
+  });
+}
+
+function getFavorites() {
+  $.get("/api/favorites", function(data) {
+    console.log("Favorites", data);
+    favorites = data;
+    console.log(favorites);
+    if (!favorites || !favorites.length) {
+      displayEmpty();
+    } else {
+      displayFavorites();
+    }
+  });
+}
+
+function displayEmpty() {
+  $(".faves").empty();
+  var messageH4 = $("<h4 class='white-text'>");
+  messageH4.css({ "text-align": "center", "margin-top": "50px" });
+  messageH4.html(
+    "No favorites yet :( navigate <a href='/browse'>here</a> to search your faves!"
+  );
+  $(".faves").append(messageH4);
+}
+
+//WORKS
+// function displayFavorites() {
+//   $(".faves").empty();
+//   var favesToAdd = [];
+//   for (var i =0; i < favorites.length; i++) {
+//     favesToAdd.push($(".faves").append(`
+//     <div class="favorited-movie">
+//     <img src="${favorites[i].poster}" alt="Poster for ${favorites[i].title}">
+//     <h5 class="white-text">${favorites[i].title}</h5>
+//     <p class="white-text">${favorites[i].year}</p>
+//     <p class="white-text">${favorites[i].rating}</p>
+//     <p class="white-text">${favorites[i].summary}</p>
+//     </div>
+//     <hr>
+//     `))
+//   }
+//   $(".faves").append(favesToAdd);
+// }
+
+//CAROUSEL WORKING ON MYTITLES PAGE
+function displayFavorites() {
+  $(".faves").empty();
+  var favesToAdd = [];
+  for (var i = 0; i < favorites.length; i++) {
+    favesToAdd.push(
+      $(".favorites-carousel").append(`
+    <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    <img src="${favorites[i].poster}" alt="${favorites[i].title}" onclick="showInfo(this)" data-target="modal1">
+    </a>
+    `)
+    );
+  }
+  $(".favorites-carousel").append(favesToAdd);
+
+  initCarousel();
+}
+
+function initCarousel() {
+  $(".favorites-carousel").carousel({
+    duration: 200,
+    fullWidth: false
+  });
+
+  setInterval(function() {
+    $(".favorites-carousel").carousel("next");
+  }, 2000); // every 2 seconds
+
+  // Init Slider
+  $(".slider").slider();
 }
