@@ -36,20 +36,16 @@ $(document).ready(function() {
         };
         // console.log(movieData);
 
+        // API to Carousel View
         $(".new-release")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img  src="${movieData.image}" alt="${movieData.title}">
+                <img onclick="showInfo(this)" src="${movieData.image}" alt="${movieData.title}" data-target="modal1">
                 </a>
                 `);
       }
 
       initNewRelease();
       // favorite();
-
-
-      // clicking on carousel item
-      $(".").on("click", function(event) {
-        event.preventDefault();
     });
   }
 
@@ -86,7 +82,7 @@ $(document).ready(function() {
 
         $(".drama-carousel")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}">
+                <img src="${movieData.image}" alt="${movieData.title}" onclick="showInfo(this)" data-target="modal1">
                 </a>`);
       }
 
@@ -127,7 +123,7 @@ $(document).ready(function() {
 
         $(".horror-carousel")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}">
+                <img src="${movieData.image}" alt="${movieData.title}" onclick="showInfo(this)" data-target="modal1">
                 </a>`);
       }
 
@@ -168,7 +164,7 @@ $(document).ready(function() {
 
         $(".action-carousel")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}">
+                <img src="${movieData.image}" alt="${movieData.title}" onclick="showInfo(this)" data-target="modal1">
                 </a>`);
       }
 
@@ -209,7 +205,7 @@ $(document).ready(function() {
 
         $(".comedy-carousel")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img src="${movieData.image}" alt="${movieData.title}">
+                <img src="${movieData.image}" alt="${movieData.title}" onclick="showInfo(this)" data-target="modal1">
                 </a>`);
       }
 
@@ -241,3 +237,48 @@ $(document).ready(function() {
     $(".slider").slider();
   }
 });
+
+// clicking on carousel item
+function showInfo(event) {
+  var imageTitle = event.alt;
+  var imageUrl = event.currentSrc;
+  $("#modal-image").html(
+    `<img src="${imageUrl}" alt="Poster for ${imageTitle}">`
+  );
+  $("#modal-title").html(`${imageTitle}`);
+  //   $("#modal-year").html(`${movieData.year}`);
+  //   $("#modal-rating").html(`Rated: ${movieData.rating}`);
+  //   $("#modal-summary").html(`${movieData.summary}`);
+
+  // Add To Favorites Button
+  favorite = $("#favorite");
+
+  // Add Button to Modal
+  $(favorite).html("favorite_border");
+
+  // Clicking on "favorite" heart icon
+  $(favorite)
+    .off()
+    .on("click", function(event) {
+      event.preventDefault();
+      // When unfavorited heart is clicked then...
+      // display full heart and add movie to database as well as my title page
+      if ($(this).html() === "favorite_border") {
+        $(this).html("favorite");
+        movieData.favorite = true;
+        // TODO add movie to database
+        console.log(movieData.title + " added to favorites");
+        insertFavorite();
+      }
+
+      // If favorited is clicked then...
+      // display empty heart and remove movie from database as well as my titles page
+      else if ($(this).html() == "favorite") {
+        $(this).html("favorite_border");
+        movieData.favorite = false;
+        // TODO remove movie to database
+        console.log(movieData.title + " removed from favorites");
+        deleteFavorite();
+      }
+    });
+}
