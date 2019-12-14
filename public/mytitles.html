@@ -68,6 +68,29 @@
       <h4 class="home-title">My Titles</h4>
 
       <!-- CAROUSEL -->
+
+      <div class="container row">
+        <h4 class="movie-genre-titles">Faves</h4>
+      </div>
+
+      <div class="container faves row movie-genre-titles"></div>
+      
+      <!-- <div class="row">
+        <div class="container blog">
+          <h4 class="movie-genre-titles">
+            Blog
+            <a class="btn btn-light grey darken-2" id="blog" href="blog.html">New Post</a>
+          </h4>
+
+          <div class="blog-container movie-genre-titles"></div>
+        </div>
+      </div> -->
+    <!--Import jQuery before materialize.js-->
+    <!-- <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script> -->
+
       <div class="container carousel-cont-home">
         <div class="carousel new-release"></div>
       </div>
@@ -92,6 +115,7 @@
       </div>
     </div>
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
@@ -102,6 +126,8 @@
 
     <script>
       $(document).ready(function() {
+        var favorites;
+        getFavorites();
         // Init Modal
         $(".modal").modal();
 
