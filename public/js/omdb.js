@@ -4,7 +4,7 @@ var favorites;
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
   event.preventDefault();
-  console.log("click");
+  // console.log("click");
 
   var movie = $("#movie-input")
     .val()
@@ -69,7 +69,7 @@ function displayMovieInfo(movie) {
       // display full heart and add movie to database as well as my title page
       if ($(this).html() === "favorite_border") {
         $(this).html("favorite");
-        movieData.favorite = true;
+        // movieData.favorite = true;
         // TODO add movie to database
         console.log(movieData.title + " added to favorites");
         insertFavorite();
@@ -78,12 +78,12 @@ function displayMovieInfo(movie) {
 
       // If favorited is clicked then...
       // display empty heart and remove movie from database as well as my titles page
-      else if ($(this).html() == "favorite") {
+      else if ($(this).html() === "favorite") {
         $(this).html("favorite_border");
-        movieData.favorite = false;
+        // movieData.favorite = false;
         // TODO remove movie to database
         console.log(movieData.title + " removed from favorites");
-        deleteFavorite();
+        // updateFavorite();
       }
     });
   });
@@ -102,21 +102,23 @@ function insertFavorite(event) {
   console.log(favorite);
 
   $.post("/api/favorites", favorite, getFavorites);
-}
+};
 
-function deleteFavorite(event) {
-  var id = $(this).data("id");
-  $.ajax({
-    method: "DELETE",
-    url: "/api/favorites" + id
-  })
-}
+// function updateFavorite(favorite) {
+//   $.ajax({
+//     method: "PUT",
+//     url: "/api/favorites/" + id,
+//     data: favoriteMovie
+//   }).then(function(data){
+//     console.log(data);
+//   });
+// };
 
 function getFavorites() {
   $.get("/api/favorites", function(data) {
-    console.log("Favorites", data);
+    
     favorites = data;
-    console.log(favorites)
+    // console.log(favorites)
     if (!favorites || !favorites.length) {
       displayEmpty();
     } else {
@@ -157,10 +159,13 @@ function displayFavorites() {
   $(".faves").empty();
   var favesToAdd = [];
   for (var i =0; i < favorites.length; i++) {
+    
     favesToAdd.push($(".favorites-carousel").append(`
+    <div data-favorites="${favorites[i].id}">
     <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
     <img src="${favorites[i].poster}" alt="${favorites[i].title}">
     </a>
+    </div>
     `))
   }
   $(".favorites-carousel").append(favesToAdd);

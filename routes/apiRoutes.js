@@ -32,21 +32,23 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/favorites/:id", function(req, res) {
-    db.Favorite.destroy({
-      where: {id: req.params.id}
-    }).then(function(dbFavorite) {
-      res.json(dbFavorite);
-    });
-  });
+  // app.delete("/api/favorites/:id", function(req, res) {
+  //   db.Favorite.destroy({
+  //     where: {id: req.params.id}
+  //   }).then(function(dbFavorite) {
+  //     res.json(dbFavorite);
+  //   });
+  // });
 
-  app.put("/api/favorites", function(req, res) {
+  app.put("/api/favorites/:id", function(req, res) {
     db.Favorite.update({
       fave: req.body.favorite
     }, {
       where: {id: req.body.id}
     }).then(function(dbFavorite) {
       res.json(dbFavorite);
+    }).catch(function(err) {
+      res.json(err);
     });
   });
   
