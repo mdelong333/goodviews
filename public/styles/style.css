@@ -80,6 +80,15 @@ a.carousel-item:hover {
           filter: drop-shadow(0 0 15px rgba(193, 235, 252, 0.562));
 }
 
+.carousel-to-modale-img {
+  height: 400px;
+  width: 275px;
+}
+
+.carousel-to-modale-title {
+  font-size: 1em;
+}
+
 .modal {
   background-color: transparent;
   text-align: center;

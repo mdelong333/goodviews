@@ -39,7 +39,7 @@ $(document).ready(function() {
         // API to Carousel View
         $(".new-release")
           .append(`<a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-                <img onclick="showInfo(this)" src="${movieData.image}" alt="${movieData.title}" data-target="modal1">
+                <img src="${movieData.image}" alt="${movieData.title}" onclick="showInfo(this)" data-target="modal1">
                 </a>
                 `);
       }
@@ -243,9 +243,10 @@ function showInfo(event) {
   var imageTitle = event.alt;
   var imageUrl = event.currentSrc;
   $("#modal-image").html(
-    `<img src="${imageUrl}" alt="Poster for ${imageTitle}">`
+    `<img class="carousel-to-modale-img" src="${imageUrl}" alt="Poster for ${imageTitle}">`
   );
   $("#modal-title").html(`${imageTitle}`);
+  $("#modal-title").addClass("carousel-to-modale-title");
   //   $("#modal-year").html(`${movieData.year}`);
   //   $("#modal-rating").html(`Rated: ${movieData.rating}`);
   //   $("#modal-summary").html(`${movieData.summary}`);
