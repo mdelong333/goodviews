@@ -19,6 +19,8 @@ $("#add-movie").on("click", function(event) {
   } else {
     displayMovieInfo(movie);
   }
+
+  $("#movie-form").trigger('reset');
 });
 
 function displayMovieInfo(movie) {
@@ -42,18 +44,6 @@ function displayMovieInfo(movie) {
       year: response.Year,
       favorite: false
     };
-    // console.log(movieData.id);
-
-    // $(".searched").append(`
-    // <div class="movie-searched">
-    // <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
-    // <h4>${movieData.title}</h4>
-    // <h5>${movieData.year}</h5>
-    // <h5>${movieData.rating}</h5>
-    // <h5>${movieData.summary}</h5>
-    // <button class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="far fa-heart heart red-text"></i></button><button class="waves-effect waves-light btn-small grey darken-4"><i class="fas fa-clipboard-list"></i></button>
-    // </div>
-    // `);
 
     // Display on Modal
     // FIXME Will not display image
@@ -98,13 +88,6 @@ function displayMovieInfo(movie) {
     });
   });
 }
-
-// This function grabs favorite from the database and updates the view
-// function getFavorites() {
-//   $.get("/api/favorite", function(data) {
-//     movieData = data;
-//   });
-// }
 
 // add to database
 function insertFavorite(event) {
