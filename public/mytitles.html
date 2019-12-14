@@ -73,24 +73,22 @@
             </a>
           </div>
       </div> -->
-      <div class="row">
-        <div class="container">
-          <h4 class="movie-genre-titles">Faves</h4>
-            <div class="faves">
-            </div>
-        </div>
+      <div class="container row">
+        <h4 class="movie-genre-titles">Faves</h4>
       </div>
+
+      <div class="container faves row movie-genre-titles"></div>
       
-      <div class="row">
+      <!-- <div class="row">
         <div class="container blog">
           <h4 class="movie-genre-titles">
             Blog
             <a class="btn btn-light grey darken-2" id="blog" href="blog.html">New Post</a>
           </h4>
 
-          <div class="blog-container"></div>
+          <div class="blog-container movie-genre-titles"></div>
         </div>
-      </div>
+      </div> -->
     <!--Import jQuery before materialize.js-->
     <!-- <script
       type="text/javascript"
@@ -109,6 +107,8 @@
 
     <script>
       $(document).ready(function() {
+        var favorites;
+        getFavorites();
         // Init Modal
         $(".modal").modal({
           // dismissible: true,
