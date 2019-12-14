@@ -33,12 +33,32 @@ body {
   }
 }
 
+.home-title {
+  color: white;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  margin-bottom: -60px;
+  margin-top: 40px;
+}
+
 .movie-genre-titles {
   color: white;
   text-align: center;
   font-family: "Nunito Sans", sans-serif;
-  margin-bottom: -80px;
-  margin-top: 45px;
+  margin-bottom: 15px;
+  margin-top: -120px;
+}
+
+.carousel-cont-home {
+  margin-top: 100px;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel-cont-browse {
+  margin-top: 150px;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .carousel-container {
@@ -47,20 +67,19 @@ body {
 
 a.carousel-item {
   background-color: transparent;
+  width: 300px !important;
+  height: 100% !important;
 }
 
 a.carousel-item:hover {
   background-color: transparent;
-  filter: drop-shadow(0 0 15px white);
+  filter: drop-shadow(0 0 15px rgba(193, 235, 252, 0.562));
 }
 
 .modal {
   background-color: transparent;
   text-align: center;
   box-shadow: none;
-}
-
-#modal-image {
 }
 
 #modal-title {
