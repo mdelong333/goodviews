@@ -31,11 +31,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>goodviews</title>
   </head>
-  <body>
-    <div class="nav-container">
+  <body class="home-page">
+    <div class="page-container">
       <nav>
         <div class="nav-wrapper black">
           <a href="#!" class="brand-logo">
@@ -62,69 +63,53 @@
         <li><a class="white-text" href="mytitles.html">My Titles</a></li>
         <!-- <li><a class="white-text" href="community.html">Community</a></li> -->
       </ul>
-    </div>
 
-      <!-- <div class="container carousel-cont">
-          <h4 class="movie-genre-titles">Your Movies</h4> -->
+      <!-- Home screen Content -->
+      <h4 class="home-title">My Titles</h4>
+
       <!-- CAROUSEL -->
-      <!-- <div class="carousel">
-            <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
-              <img src="./images/7tdr64aic6821.jpg" alt="">
-            </a>
-          </div>
-      </div> -->
-      <div class="row">
-        <div class="container">
-          <h4 class="movie-genre-titles">Faves</h4>
-            <div class="faves">
-            </div>
-        </div>
+      <div class="container carousel-cont-home">
+        <div class="carousel new-release"></div>
       </div>
-      
-      <div class="row">
-        <div class="container blog">
-          <h4 class="movie-genre-titles">
-            Blog
-            <a class="btn btn-light grey darken-2" id="blog" href="blog.html">New Post</a>
-          </h4>
 
-          <div class="blog-container"></div>
+      <!-- Standard Modal | USE FOR TESTING FAVORITE BUTTON -->
+      <div id="modal1" class="modal">
+        <div class="modal-content" id="modal-image"></div>
+        <div class="white-text">
+          <h1 id="modal-title"></h1>
+          <p>
+            <small id="modal-year"></small>
+            <br />
+            <small id="modal-rating"></small>
+          </p>
+          <br />
+          <p class="related">
+            <strong id="modal-summary"></strong>
+          </p>
+
+          <button id="favorite" class="material-icons red-text"></button>
         </div>
       </div>
-    <!--Import jQuery before materialize.js-->
-    <!-- <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-2.1.1.min.js"
-    ></script> -->
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Compiled and minified JavaScript - This script necessary for carousel display-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Link for carousel -->
+    <!-- carousel content -->
     <script type="text/javascript" src="./js/carousel.js"></script>
-    <!-- Movie Search and to populate image carousels by genre -->
     <script type="text/javascript" src="./js/omdb.js"></script>
 
     <script>
       $(document).ready(function() {
         // Init Modal
-        $(".modal").modal({
-          // dismissible: true,
-          // opacity: .75,
-          // inDuration: 1000,
-          // outDuration: 200,
-          // startingTop: '4%',
-          // endingTop: '20%',
-        });
+        $(".modal").modal();
 
         // Init Sidenav
         $(".sidenav").sidenav();
-        // Init Modal
-        $(".modal").modal();
       });
     </script>
+    <!-- 3D Effect -->
     <script src="./js/3d-effect.js"></script>
   </body>
 </html>
