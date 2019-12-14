@@ -133,54 +133,51 @@ function displayEmpty() {
   $(".faves").append(messageH4);
 };
 
+//WORKS 
+// function displayFavorites() {
+//   $(".faves").empty();
+//   var favesToAdd = [];
+//   for (var i =0; i < favorites.length; i++) {
+//     favesToAdd.push($(".faves").append(`
+//     <div class="favorited-movie">
+//     <img src="${favorites[i].poster}" alt="Poster for ${favorites[i].title}">
+//     <h5 class="white-text">${favorites[i].title}</h5>
+//     <p class="white-text">${favorites[i].year}</p>
+//     <p class="white-text">${favorites[i].rating}</p>
+//     <p class="white-text">${favorites[i].summary}</p>
+//     </div>
+//     <hr>
+//     `))
+//   }
+//   $(".faves").append(favesToAdd);
+// }
+
+//CAROUSEL WORKING ON MYTITLES PAGE
 function displayFavorites() {
   $(".faves").empty();
   var favesToAdd = [];
   for (var i =0; i < favorites.length; i++) {
-    favesToAdd.push($(".faves").append(`
-    <div class="favorited-movie">
-    <img src="${favorites[i].poster}" alt="Poster for ${favorites[i].title}">
-    <h5 class="white-text">${favorites[i].title}</h5>
-    <p class="white-text">${favorites[i].year}</p>
-    <p class="white-text">${favorites[i].rating}</p>
-    <p class="white-text">${favorites[i].summary}</p>
-    </div>
-    <hr>
+    favesToAdd.push($(".favorites-carousel").append(`
+    <a href="#one!" data-target="modal1" class="carousel-item btn-small modal-trigger">
+    <img src="${favorites[i].poster}" alt="${favorites[i].title}">
+    </a>
     `))
   }
-  $(".faves").append(favesToAdd);
-}
+  $(".favorites-carousel").append(favesToAdd);
 
-// function getFavorites(id) {
-//   $.get("/api/favorites", function(data) {
-//     favorites = data;
-//     console.log(favorites);
-//   });
-// };
+  initCarousel();
+};
 
-// //add to database
-// function updateFavorite(imdbID) {
+function initCarousel() {
+  $('.favorites-carousel').carousel({
+      duration: 200,
+      fullWidth: false
+  });
 
-//   $.post("/api/favorites:" + imdbID, function(data) {
-//     return data;
-//   })
+  setInterval(function() {
+    $('.favorites-carousel').carousel('next');
+  }, 2000); // every 2 seconds
 
-// };
-
-// function addToFavePage(res, err) {
-
-//   // console.log(movieData);
-//   // $(".faves").html(`
-//   //   <div class="movie-searched">
-//   //   <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
-//   //   <h4>${movieData.title}</h4>
-//   //   <h5>${movieData.year}</h5>
-//   //   <h5>${movieData.rating}</h5>
-//   //   <h5>${movieData.summary}</h5>
-//   //   </div>
-//   //   `);
-//   //   if (err) {
-//   //     console.log(err);
-//   //   }
-// }
-
+  // Init Slider
+  $('.slider').slider();
+};
