@@ -1,4 +1,5 @@
 var favorite;
+var favorites;
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
@@ -31,6 +32,7 @@ function displayMovieInfo(movie) {
     method: "GET"
   }).then(function(response) {
     // console.log(response);
+
     movieData = {
       poster: response.Poster,
       title: response.Title,
@@ -39,6 +41,7 @@ function displayMovieInfo(movie) {
       year: response.Year,
       favorite: false
     };
+    // console.log(movieData.id);
 
     // $(".searched").append(`
     // <div class="movie-searched">
@@ -69,31 +72,29 @@ function displayMovieInfo(movie) {
     $(favorite).html("favorite_border");
 
     // Clicking on "favorite" heart icon
-    $(favorite)
-      .off()
-      .on("click", function(event) {
-        event.preventDefault();
-        // When unfavorited heart is clicked then...
-        // display full heart and add movie to database as well as my title page
-        if ($(this).html() === "favorite_border") {
-          $(this).html("favorite");
-          movieData.favorite = true;
-          // TODO add movie to database
-          console.log(movieData.title + " added to favorites");
-          insertFavorite();
-          addToFavePage();
-        }
+    $(favorite).off().on("click", function(event) {
+      event.preventDefault();
+      // When unfavorited heart is clicked then...
+      // display full heart and add movie to database as well as my title page
+      if ($(this).html() === "favorite_border") {
+        $(this).html("favorite");
+        movieData.favorite = true;
+        // TODO add movie to database
+        console.log(movieData.title + " added to favorites");
+        insertFavorite();
+        
+      }
 
-        // If favorited is clicked then...
-        // display empty heart and remove movie from database as well as my titles page
-        else if ($(this).html() == "favorite") {
-          $(this).html("favorite_border");
-          movieData.favorite = false;
-          // TODO remove movie to database
-          console.log(movieData.title + " removed from favorites");
-          removeFavorite();
-        }
-      });
+      // If favorited is clicked then...
+      // display empty heart and remove movie from database as well as my titles page
+      else if ($(this).html() == "favorite") {
+        $(this).html("favorite_border");
+        movieData.favorite = false;
+        // TODO remove movie to database
+        console.log(movieData.title + " removed from favorites");
+        deleteFavorite();
+      }
+    });
   });
 }
 
@@ -108,35 +109,94 @@ function displayMovieInfo(movie) {
 function insertFavorite(event) {
   var favorite = {
     title: movieData.title,
-    favorite: true
+    poster: movieData.poster,
+    summary: movieData.summary,
+    rating: movieData.rating,
+    year: movieData.year,
+    favorite: true,
   };
   console.log(favorite);
 
   $.post("/api/favorites", favorite, getFavorites);
 }
 
-function getFavorites(id) {
+function deleteFavorite(event) {
+  var id = $(this).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: "/api/favorites" + id
+  })
+}
+
+function getFavorites() {
   $.get("/api/favorites", function(data) {
+    console.log("Favorites", data);
     favorites = data;
-    console.log(favorites);
+    console.log(favorites)
+    if (!favorites || !favorites.length) {
+      displayEmpty();
+    } else {
+      displayFavorites();
+    }
   });
 }
 
-//add to database
-function removeFavorite(event) {}
+function displayEmpty() {
+  $(".faves").empty();
+  var messageH4 = $("<h4 class='white-text'>");
+  messageH4.css({ "text-align": "center", "margin-top": "50px" });
+  messageH4.html("No favorites yet :( navigate <a href='/browse'>here</a> to search your faves!");
+  $(".faves").append(messageH4);
+};
 
-function addToFavePage(res, err) {
-  console.log(movieData);
-  $(".faves").html(`
-    <div class="movie-searched">
-    <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
-    <h4>${movieData.title}</h4>
-    <h5>${movieData.year}</h5>
-    <h5>${movieData.rating}</h5>
-    <h5>${movieData.summary}</h5>
+function displayFavorites() {
+  $(".faves").empty();
+  var favesToAdd = [];
+  for (var i =0; i < favorites.length; i++) {
+    favesToAdd.push($(".faves").append(`
+    <div class="favorited-movie">
+    <img src="${favorites[i].poster}" alt="Poster for ${favorites[i].title}">
+    <h5 class="white-text">${favorites[i].title}</h5>
+    <p class="white-text">${favorites[i].year}</p>
+    <p class="white-text">${favorites[i].rating}</p>
+    <p class="white-text">${favorites[i].summary}</p>
     </div>
-    `);
-  if (err) {
-    console.log(err);
+    <hr>
+    `))
   }
+  $(".faves").append(favesToAdd);
 }
+
+// function getFavorites(id) {
+//   $.get("/api/favorites", function(data) {
+//     favorites = data;
+//     console.log(favorites);
+//   });
+// };
+
+// //add to database
+// function updateFavorite(imdbID) {
+
+//   $.post("/api/favorites:" + imdbID, function(data) {
+//     return data;
+//   })
+
+// };
+
+// function addToFavePage(res, err) {
+
+//   // console.log(movieData);
+//   // $(".faves").html(`
+//   //   <div class="movie-searched">
+//   //   <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
+//   //   <h4>${movieData.title}</h4>
+//   //   <h5>${movieData.year}</h5>
+//   //   <h5>${movieData.rating}</h5>
+//   //   <h5>${movieData.summary}</h5>
+//   //   </div>
+//   //   `);
+//   //   if (err) {
+//   //     console.log(err);
+//   //   }
+// }
+
