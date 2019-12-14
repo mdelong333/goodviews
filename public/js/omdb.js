@@ -82,6 +82,7 @@ function displayMovieInfo(movie) {
           // TODO add movie to database
           console.log(movieData.title + " added to favorites");
           insertFavorite();
+          addToFavePage();
         }
 
         // If favorited is clicked then...
@@ -89,12 +90,6 @@ function displayMovieInfo(movie) {
         else if ($(this).html() == "favorite") {
           $(this).html("favorite_border");
           movieData.favorite = false;
-          // var numAffectedRows = await movieData.destroy({
-          //   where: {
-          //     favorite: false // deletes all pugs whose age is 7
-          //   }
-          // })
-          // console.log(numAffectedRows) // if we had 3 pugs with the age of 7, this will be 3
           // TODO remove movie to database
           console.log(movieData.title + " removed from favorites");
           removeFavorite();
@@ -130,3 +125,19 @@ function getFavorites(id) {
 
 //add to database
 function removeFavorite(event) {}
+
+function addToFavePage(res, err) {
+  console.log(movieData);
+  $(".faves").html(`
+    <div class="movie-searched">
+    <img src="${movieData.poster}" alt="Poster for ${movieData.title}">
+    <h4>${movieData.title}</h4>
+    <h5>${movieData.year}</h5>
+    <h5>${movieData.rating}</h5>
+    <h5>${movieData.summary}</h5>
+    </div>
+    `);
+  if (err) {
+    console.log(err);
+  }
+}
