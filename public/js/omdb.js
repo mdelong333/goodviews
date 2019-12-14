@@ -4,7 +4,6 @@ var favorites;
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 $("#add-movie").on("click", function(event) {
   event.preventDefault();
-  console.log("click");
 
   var movie = $("#movie-input")
     .val()
