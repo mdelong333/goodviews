@@ -1,6 +1,4 @@
-# PROJECT2
-
-GOOD VIEWS
+# Goodviews
 
 Team Members
 
